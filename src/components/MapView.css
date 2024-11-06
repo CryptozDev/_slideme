@@ -1,0 +1,46 @@
+/* src/components/MapView.css */
+.map-view {
+    width: 100%;
+    height: calc(100vh - 120px);
+    position: relative;
+  }
+  
+  .search-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+  .text {
+    font-weight: bold;
+    color: #424242;
+  }
+  
+  .search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }  
