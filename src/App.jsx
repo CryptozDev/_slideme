@@ -11,6 +11,7 @@ import OTP from './components/OTP';
 import Createpass from './components/Createpass';
 import Forgotpass from './components/Forgotpass';
 import Home from './components/Home';
+import Payment from './components/Payment';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/createpass" element={<Createpass />} />
           <Route path="/forgotpass" element={<Forgotpass />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/payment" element={<Payment />} />
           <Route
             path="/home"
             element={
