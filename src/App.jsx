@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import MapView from './components/MapView';
 import BottomNavBar from './components/BottomNavBar';
+import SplashScreen from './components/SplashScreen';
 import Login from './components/Login';
 import Register from './components/Register';
 import DetailForm from './components/DetailForm';
@@ -18,7 +19,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<SplashScreen />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/detailform" element={<DetailForm />} />
