@@ -31,6 +31,13 @@ const MapView = () => {
     }
   };
 
+  const handleCurrentLocationClick = () => {
+    setPosition({ lat: 13.85600682383675, lng: 100.58578256895566 }); // กลับไปที่พิกัดเริ่มต้น
+    if (map) {
+      map.panTo({ lat: 13.85600682383675, lng: 100.58578256895566 });
+    }
+  };
+
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
@@ -38,7 +45,7 @@ const MapView = () => {
   return (
     <div className="map-view">
       <div className="search-container">
-        <div className="search-item">
+        <div className="search-item" onClick={handleCurrentLocationClick}>
           <span className="icon">🟢</span>
           <span className="text">ตำแหน่งปัจจุบัน</span>
         </div>
