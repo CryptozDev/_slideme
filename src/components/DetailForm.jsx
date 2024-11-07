@@ -31,7 +31,7 @@ const DetailForm = () => {
   return (
     <div className="form-container">
       <h2>สมัครสมาชิก</h2>
-      <p>มีบัญชีอยู่แล้ว? <Link href="/login">เข้าสู่ระบบ</Link></p>
+      <p>มีบัญชีอยู่แล้ว? <Link to="/login">เข้าสู่ระบบ</Link></p>
       <form onSubmit={handleSubmit} className="detail-form">
         <label>
           ชื่อ *
