@@ -12,6 +12,7 @@ import OTP from './components/OTP';
 import Createpass from './components/Createpass';
 import Forgotpass from './components/Forgotpass';
 import Home from './components/Home';
+import DestinationSelect from './components/DestinationSelect';
 import Payment from './components/Payment';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/createpass" element={<Createpass />} />
           <Route path="/forgotpass" element={<Forgotpass />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/destination" element={<DestinationSelect />} />
           <Route path="/payment" element={<Payment />} />
           <Route
             path="/home"
