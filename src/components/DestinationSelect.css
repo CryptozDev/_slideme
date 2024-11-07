@@ -1,60 +1,68 @@
-/* src/components/DestinationSelect.css */
+/* src/components/Destination.css */
 
 .destination-container {
-    background-color: #f9f9f9;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100vh;
   }
   
-  .destination-header {
-    background-color: #2EA366;
-    color: #fff;
+  .destination-content {
+    flex: 1;
     padding: 20px;
-    width: 100%;
+    overflow-y: auto;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  
+  .search-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  .back-button {
-    position: absolute;
-    left: 20px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
+  .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+  .text {
+    font-weight: bold;
+    color: #424242;
   }
   
   .destination-list {
-    padding: 20px;
-    width: 100%;
-    max-width: 600px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
   
-  .destination-item {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
+  .list-item {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
   }
   
-  .destination-item span {
+  .list-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+  }
+  
+  .list-text .location-name {
     font-weight: bold;
-    font-size: 18px;
+    color: #424242;
   }
   
-  .destination-item p {
-    margin: 5px 0 0;
-    font-size: 14px;
+  .list-text .location-address {
     color: #777;
+    font-size: 0.9em;
   }  

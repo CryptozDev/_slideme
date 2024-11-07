@@ -1,41 +1,24 @@
 // src/components/MapView.jsx
 import React, { useState } from 'react';
-import { GoogleMap, Marker, Autocomplete, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { useNavigate } from 'react-router-dom';
 import './MapView.css';
 
 const MapView = () => {
   const [map, setMap] = useState(null);
   const [position, setPosition] = useState({ lat: 13.85600682383675, lng: 100.58578256895566 }); // พิกัดเริ่มต้นที่มหาวิทยาลัยศรีปทุม
-  const [autocomplete, setAutocomplete] = useState(null);
+  const navigate = useNavigate();
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: 'AIzaSyAU-zXlLCv3bX76fLS4mPEYYIrSOxkAfnA', // ใส่ API Key ของคุณที่นี่
-    libraries: ['places'],
   });
 
   const onLoad = (mapInstance) => {
     setMap(mapInstance);
   };
 
-  const onPlaceChanged = () => {
-    if (autocomplete !== null) {
-      const place = autocomplete.getPlace();
-      if (place.geometry && place.geometry.location) {
-        const newPosition = {
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng(),
-        };
-        setPosition(newPosition);
-        map.panTo(newPosition); // เลื่อนแผนที่ไปยังตำแหน่งที่เลือก
-      }
-    }
-  };
-
-  const handleCurrentLocationClick = () => {
-    setPosition({ lat: 13.85600682383675, lng: 100.58578256895566 }); // กลับไปที่พิกัดเริ่มต้น
-    if (map) {
-      map.panTo({ lat: 13.85600682383675, lng: 100.58578256895566 });
-    }
+  const handleDestinationClick = () => {
+    navigate('/destination'); // นำทางไปหน้า /destination
   };
 
   if (!isLoaded) {
@@ -45,21 +28,13 @@ const MapView = () => {
   return (
     <div className="map-view">
       <div className="search-container">
-        <div className="search-item" onClick={handleCurrentLocationClick}>
+        <div className="search-item">
           <span className="icon">🟢</span>
           <span className="text">ตำแหน่งปัจจุบัน</span>
         </div>
-        <div className="search-item">
-          <Autocomplete
-            onLoad={(autocompleteInstance) => setAutocomplete(autocompleteInstance)}
-            onPlaceChanged={onPlaceChanged}
-          >
-            <input
-              type="text"
-              placeholder="คุณจะไปที่ไหน"
-              className="search-input"
-            />
-          </Autocomplete>
+        <div className="search-item" onClick={handleDestinationClick}>
+          <span className="icon">🔍</span>
+          <span className="text">เลือกจุดหมายปลายทาง</span>
         </div>
       </div>
 
