@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { useNavigate } from 'react-router-dom';
-import './MapView.css';
+import './MapHome.css';
 
 const MapView = () => {
   const [map, setMap] = useState(null);
@@ -27,6 +27,17 @@ const MapView = () => {
 
   return (
     <div className="map-view">
+      <div className="search-container">
+        <div className="search-item">
+          <span className="icon">🟢</span>
+          <span className="text">ตำแหน่งปัจจุบัน</span>
+        </div>
+        <div className="search-item" onClick={handleDestinationClick}>
+          <span className="icon">🔍</span>
+          <span className="text">เลือกจุดหมายปลายทาง</span>
+        </div>
+      </div>
+
       <GoogleMap
         center={position}
         zoom={15}

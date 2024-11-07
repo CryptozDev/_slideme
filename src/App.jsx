@@ -3,6 +3,7 @@ import React from 'react';
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MapView from './components/MapView';
+import MapHome from './components/MapHome';
 import BottomNavBar from './components/BottomNavBar';
 import SplashScreen from './components/SplashScreen';
 import Login from './components/Login';
@@ -13,6 +14,7 @@ import Createpass from './components/Createpass';
 import Forgotpass from './components/Forgotpass';
 import Home from './components/Home';
 import DestinationSelect from './components/DestinationSelect';
+import ConfirmDestination from './components/ConfirmDestination';
 import Payment from './components/Payment';
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path="/forgotpass" element={<Forgotpass />} />
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<DestinationSelect />} />
+          <Route path="/confirmdestination" element={<ConfirmDestination />} />
           <Route path="/payment" element={<Payment />} />
           <Route
             path="/home"
@@ -39,6 +42,7 @@ function App() {
                   {/* Search input form */}
                 </div>
                 <MapView />
+                <MapHome />
                 <BottomNavBar />
               </>
             }
