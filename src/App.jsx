@@ -16,6 +16,7 @@ import Home from './components/Home';
 import DestinationSelect from './components/DestinationSelect';
 import ConfirmDestination from './components/ConfirmDestination';
 import Payment from './components/Payment';
+import PickupDetail from './components/PickupDetail';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<DestinationSelect />} />
           <Route path="/confirmdestination" element={<ConfirmDestination />} />
+          <Route path="/pickupdetail" element={<PickupDetail />} />
           <Route path="/payment" element={<Payment />} />
           <Route
             path="/home"
