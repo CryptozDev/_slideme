@@ -8,7 +8,7 @@ const PickupDetail = () => {
     <div className="pickup-detail-container">
       <Navbar />
       <div className="pickup-detail-content">
-        <h2 className="title">รายละเอียดค่าบริการเสนอราคา</h2>
+        <h2 className="title">รายละเอียดคำขอเสนอราคา</h2>
         <div className="price-icon">
           <img src="https://img5.pic.in.th/file/secure-sv1/image-removebg-preview-249e5b2dc7d633d50.png" alt="Price Icon" className="icon-image" />
         </div>
