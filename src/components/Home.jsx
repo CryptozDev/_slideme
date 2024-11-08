@@ -2,14 +2,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import BottomNavBar from './BottomNavBar';
-import MapView from './MapView';
+import MapHome from './MapHome';
 import './Home.css';
 
 const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
-      <MapView />
+      <MapHome />
       <BottomNavBar />
     </div>
   );

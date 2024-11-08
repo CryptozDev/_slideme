@@ -1,6 +1,6 @@
 // src/components/DetailForm.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './DetailForm.css';
 
 const DetailForm = () => {
@@ -31,7 +31,7 @@ const DetailForm = () => {
   return (
     <div className="form-container">
       <h2>สมัครสมาชิก</h2>
-      <p>มีบัญชีอยู่แล้ว? <a href="/login">เข้าสู่ระบบ</a></p>
+      <p>มีบัญชีอยู่แล้ว? <Link to="/login">เข้าสู่ระบบ</Link></p>
       <form onSubmit={handleSubmit} className="detail-form">
         <label>
           ชื่อ *
