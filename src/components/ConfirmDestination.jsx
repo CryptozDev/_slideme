@@ -4,8 +4,15 @@ import './ConfirmDestination.css';
 import Navbar from './Navbar';
 import BottomNavBar from './BottomNavBar';
 import MapView from './MapView';
+import { useNavigate } from 'react-router-dom';
 
 const ConfirmDestination = () => {
+  const navigate = useNavigate();
+
+  const handleConfirmClick = () => {
+    navigate('/choosetowtruck');
+  };
+
   return (
     <div className="confirm-destination-container">
       <Navbar />
@@ -33,7 +40,9 @@ const ConfirmDestination = () => {
                 </div>
               </div>
             </div>
-            <button className="confirm-button">ถัดไป</button>
+            <button className="confirm-button" onClick={handleConfirmClick}>
+              ถัดไป
+            </button>
           </div>
         </div>
       </div>

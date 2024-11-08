@@ -15,8 +15,9 @@ import Forgotpass from './components/Forgotpass';
 import Home from './components/Home';
 import DestinationSelect from './components/DestinationSelect';
 import ConfirmDestination from './components/ConfirmDestination';
-import Payment from './components/Payment';
+import Towtruck from './components/Towtruck';
 import PickupDetail from './components/PickupDetail';
+import Payment from './components/Payment';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<DestinationSelect />} />
           <Route path="/confirmdestination" element={<ConfirmDestination />} />
+          <Route path="/choosetowtruck" element={<Towtruck />} />
           <Route path="/pickupdetail" element={<PickupDetail />} />
           <Route path="/payment" element={<Payment />} />
           <Route
