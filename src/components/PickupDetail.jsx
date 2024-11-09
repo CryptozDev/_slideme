@@ -2,8 +2,15 @@ import React from 'react';
 import './PickupDetail.css';
 import Navbar from './Navbar';
 import BottomNavBar from './BottomNavBar';
+import { useNavigate } from 'react-router-dom';
 
 const PickupDetail = () => {
+  const navigate = useNavigate();
+
+  const handleConfirmClick = () => {
+    navigate('/waiting');
+  };
+
   return (
     <div className="pickup-detail-container">
       <Navbar />
@@ -37,7 +44,7 @@ const PickupDetail = () => {
             <div className="value">26 min</div>
           </div>
         </div>
-        <button className="request-button">ส่งคำขอเสนอราคา</button>
+        <button className="request-button" onClick={handleConfirmClick}>ส่งคำขอเสนอราคา</button>
         <p className="note">
           คุณอาจจะต้องรอคนขับตอบรับการเสนอราคามากกว่า 5-10 นาที ระบบจะโอนใบคำขอไปที่คนขับใกล้เคียงถ้าไม่มีการต่อ
         </p>

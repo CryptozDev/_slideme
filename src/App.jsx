@@ -17,6 +17,7 @@ import DestinationSelect from './components/DestinationSelect';
 import ConfirmDestination from './components/ConfirmDestination';
 import Towtruck from './components/Towtruck';
 import PickupDetail from './components/PickupDetail';
+import Waiting from './components/Waiting';
 import Payment from './components/Payment';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/confirmdestination" element={<ConfirmDestination />} />
           <Route path="/choosetowtruck" element={<Towtruck />} />
           <Route path="/pickupdetail" element={<PickupDetail />} />
+          <Route path="/waiting" element={<Waiting />} />
           <Route path="/payment" element={<Payment />} />
           <Route
             path="/home"
