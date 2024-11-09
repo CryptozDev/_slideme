@@ -18,6 +18,7 @@ import ConfirmDestination from './components/ConfirmDestination';
 import Towtruck from './components/Towtruck';
 import PickupDetail from './components/PickupDetail';
 import Waiting from './components/Waiting';
+import Biddingcompleted from './components/Biddingcompleted';
 import Payment from './components/Payment';
 // import Chat from './components/Chat';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/choosetowtruck" element={<Towtruck />} />
           <Route path="/pickupdetail" element={<PickupDetail />} />
           <Route path="/waiting" element={<Waiting />} />
+          <Route path="/bidcom" element={<Biddingcompleted />} />
           <Route path="/payment" element={<Payment />} />
           {/* <Route path="/chat" element={<Chat />} /> */}
           <Route

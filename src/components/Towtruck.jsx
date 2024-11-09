@@ -26,15 +26,15 @@ const Towtruck = () => {
               <span className="truck-name">รถสไลด์</span>
             </div>
             <div className="truck-item">
-              <img src="https://i.postimg.cc/G3V6TBGx/tow.png" alt="รถลากจูง" className="truck-icon" />
+              <img src="https://img2.pic.in.th/pic/tow.png" alt="รถลากจูง" className="truck-icon" />
               <span className="truck-name">รถลากจูง</span>
             </div>
             <div className="truck-item">
-              <img src="https://i.postimg.cc/3wkcwYNc/image-removebg-preview-3.png" alt="รถสไลด์พิเศษ" className="truck-icon" />
+              <img src="https://img5.pic.in.th/file/secure-sv1/image-removebg-preview-3b5b54c6a7aa4078d.png" alt="รถสไลด์พิเศษ" className="truck-icon" />
               <span className="truck-name">รถสไลด์พิเศษ</span>
             </div>
             <div className="truck-item">
-              <img src="https://i.postimg.cc/7hWsgR5L/car-service-removebg-preview.png" alt="ยกรถอุบัติเหตุ" className="truck-icon" />
+              <img src="https://img2.pic.in.th/pic/car-service-removebg-preview.png" alt="ยกรถอุบัติเหตุ" className="truck-icon" />
               <span className="truck-name">ยกรถอุบัติเหตุ</span>
             </div>
           </div>
