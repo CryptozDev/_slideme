@@ -19,6 +19,7 @@ import Towtruck from './components/Towtruck';
 import PickupDetail from './components/PickupDetail';
 import Waiting from './components/Waiting';
 import Payment from './components/Payment';
+// import Chat from './components/Chat';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/pickupdetail" element={<PickupDetail />} />
           <Route path="/waiting" element={<Waiting />} />
           <Route path="/payment" element={<Payment />} />
+          {/* <Route path="/chat" element={<Chat />} /> */}
           <Route
             path="/home"
             element={
