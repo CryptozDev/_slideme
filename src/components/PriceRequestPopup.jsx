@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PriceRequestPopup.css';
 
 const PriceRequestPopup = ({ onClose }) => {
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    navigate('/home'); // นำทางไปหน้า /home
+  };
+
   return (
     <div className="popup-overlay">
       <div className="popup-content">
@@ -13,7 +20,7 @@ const PriceRequestPopup = ({ onClose }) => {
           <p className="vehicle-type">รถสไลด์</p>
           <p className="waiting-message">โปรดรอคนขับสักครู่</p>
         </div>
-        <button className="cancel-button" onClick={onClose}>
+        <button className="cancel-button" onClick={handleCancel}>
           ยกเลิก
         </button>
       </div>
