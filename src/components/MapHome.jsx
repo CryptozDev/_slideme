@@ -6,7 +6,7 @@ import './MapHome.css';
 
 const MapView = () => {
   const [map, setMap] = useState(null);
-  const [position, setPosition] = useState({ lat: 13.85600682383675, lng: 100.58578256895566 }); // พิกัดเริ่มต้นที่มหาวิทยาลัยศรีปทุม
+  const [position, setPosition] = useState({ lat: 13.989015971552709, lng: 100.61575933224323 });
   const navigate = useNavigate();
 
   const { isLoaded } = useJsApiLoader({
