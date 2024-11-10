@@ -20,6 +20,9 @@ import PickupDetail from './components/PickupDetail';
 import Waiting from './components/Waiting';
 import Biddingcompleted from './components/Biddingcompleted';
 import Payment from './components/Payment';
+import QrPayment from './components/QrPayment';
+import Waitpickup from './components/Waitpickup';
+import Driveriscoming from './components/Driveriscoming';
 // import Chat from './components/Chat';
 
 function App() {
@@ -42,6 +45,9 @@ function App() {
           <Route path="/waiting" element={<Waiting />} />
           <Route path="/bidcom" element={<Biddingcompleted />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/qrpayment" element={<QrPayment />} />
+          <Route path="/waitpickup" element={<Waitpickup />} />
+          <Route path="/driveriscoming" element={<Driveriscoming />} />
           {/* <Route path="/chat" element={<Chat />} /> */}
           <Route
             path="/home"

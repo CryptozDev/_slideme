@@ -1,4 +1,3 @@
-// src/components/Payment.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Payment.css';
@@ -10,6 +9,10 @@ const Payment = () => {
     navigate(-1); // กลับไปหน้าก่อนหน้า
   };
 
+  const goToQRPayment = () => {
+    navigate('/qrpayment');
+  };
+
   return (
     <div className="payment-container">
       <header className="payment-header">
@@ -17,7 +20,7 @@ const Payment = () => {
         <h1>วิธีการชำระเงิน</h1>
       </header>
       <div className="payment-content">
-        <div className="payment-option">
+        <div className="payment-option" onClick={goToQRPayment}>
           <img src="https://img2.pic.in.th/pic/Promptpay.png" alt="QR พร้อมเพย์" className="payment-icon" />
           <span>QR พร้อมเพย์</span>
         </div>
