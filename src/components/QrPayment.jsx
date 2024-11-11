@@ -33,7 +33,7 @@ const QrPayment = () => {
         </div>
         <div className="qr-code">
           <QRCodeCanvas
-            value="ข้อมูลพร้อมเพย์ของคุณหรือข้อมูลการชำระเงิน"
+            value=""
             size={200}
           />
         </div>
