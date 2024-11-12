@@ -33,7 +33,7 @@ const QrPayment = () => {
         </div>
         <div className="qr-code">
           <QRCodeCanvas
-            value=""
+            value="https://img2.pic.in.th/pic/IMG_5136098a1618fb4ef74a.jpg"
             size={200}
           />
         </div>
