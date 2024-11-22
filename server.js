@@ -1,47 +1,58 @@
-import express from "express";
-import http from "http";
-import { Server } from "socket.io";
-import path from "path"; // For serving static files
+import React, { useEffect, useState } from "react";
+import { io } from "socket.io-client";
 
-const app = express();
+// เชื่อมต่อกับ Server URL
+const socket = io("https://your-service-name.onrender.com"); // เปลี่ยนเป็น URL ของ Backend ที่โฮสต์
 
-// Serve static files (optional, for built React app)
+const path = require("path");
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "dist"))); // Adjust the "dist" path if needed
+
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
-// Create HTTP server
-const server = http.createServer(app);
+const App = () => {
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
 
-// Initialize Socket.IO server
-const io = new Server(server, {
-  cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173", // Use environment variable or local URL
-    methods: ["GET", "POST"],
-  },
-});
+  useEffect(() => {
+    // ฟังข้อความใหม่จาก Server
+    socket.on("message", (message) => {
+      setMessages((prevMessages) => [...prevMessages, message]);
+    });
 
-// Handle socket connections
-io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
+    // ทำความสะอาดเมื่อ Component ถูก Unmount
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
-  // Listen for incoming messages
-  socket.on("message", (message) => {
-    console.log("Received message:", message);
-    io.emit("message", message); // Emit the message to all connected clients
-  });
+  const sendMessage = () => {
+    if (input.trim()) {
+      socket.emit("message", input); // ส่งข้อความไปยัง Server
+      setInput("");
+    }
+  };
 
-  // Handle disconnection
-  socket.on("disconnect", () => {
-    console.log("A user disconnected:", socket.id);
-  });
-});
+  return (
+    <div>
+      <h1>Chat App</h1>
+      <div style={{ border: "1px solid #ccc", padding: "10px", height: "300px", overflowY: "scroll" }}>
+        {messages.map((msg, index) => (
+          <div key={index}>{msg}</div>
+        ))}
+      </div>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Type a message..."
+      />
+      <button onClick={sendMessage}>Send</button>
+    </div>
+  );
+};
 
-// Start the server
-const PORT = process.env.PORT || 3000; // Use environment variable or default to 3000
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+export default App;
