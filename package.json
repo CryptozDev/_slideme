@@ -5,7 +5,7 @@
   "homepage": "https://cryptozdev.github.io/_slideme",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "node server.js && npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
