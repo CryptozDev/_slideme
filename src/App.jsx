@@ -1,6 +1,7 @@
 // src/App.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { io } from 'socket.io-client'; // นำเข้า Socket.IO Client
 import Navbar from './components/Navbar';
 import MapView from './components/MapView';
 import MapHome from './components/MapHome';
@@ -41,12 +42,30 @@ import HomeDriver from './driver/Home';
 import CheckDestination from './driver/CheckDestination';
 import ChatDriver from './driver/ChatDriver';
 
+// URL ของ Socket.IO Server
+const SOCKET_URL = 'https://slideme-rao3.onrender.com';
+
 function App() {
+  const [socket, setSocket] = useState(null); // สร้าง state สำหรับ socket connection
+
+  useEffect(() => {
+    // เริ่มการเชื่อมต่อ Socket.IO
+    const newSocket = io(SOCKET_URL, {
+      transports: ['websocket'], // ใช้ WebSocket เป็น transport protocol
+      reconnection: true, // เปิดใช้งานการ reconnect อัตโนมัติ
+    });
+    setSocket(newSocket); // บันทึก socket instance ไว้ใน state
+
+    // Cleanup: ปิดการเชื่อมต่อเมื่อ component ถูก unmount
+    return () => newSocket.close();
+  }, []);
+
   return (
     <ChatProvider>
       <Router>
         <div className="app-container">
           <Routes>
+            {/* เส้นทางของผู้ใช้ */}
             <Route path="/" element={<SplashScreen />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -67,27 +86,24 @@ function App() {
             <Route path="/driveriscoming" element={<Driveriscoming />} />
             <Route path="/chat-customer" element={<ChatCustomer />} />
 
-            
+            {/* เส้นทางของคนขับ */}
             <Route path="/driver" element={<SplashScreenDriver />} />
-            <Route path="/login-driver" element={<LoginDriver />} />
-            <Route path="/register-driver" element={<RegisterDriver />} />
-            <Route path="/otp-driver" element={<OTPDriver />} />
-            <Route path="/createpass-driver" element={<CreatepassDriver />} />
-            <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
-            <Route path="/drivertobiding" element={<Drivertobiding />} />
-            <Route path='/biding-driver' element={<Bidding />} />
-            <Route path="/waiting-driver" element={<WaitingDriver />} />
-            <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
-            <Route path="/home-driver" element={<HomeDriver />} />
-            <Route path="/checkdestination-driver" element={<CheckDestination />} />
-            <Route path="/chat-driver" element={<ChatDriver />} />
-            {/* <Route path="/receive-job" element={<ReceiveJob />} />
-            <Route path="/current-job" element={<CurrentJob />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/driver/login" element={<LoginDriver />} />
+            <Route path="/driver/register" element={<RegisterDriver />} />
+            <Route path="/driver/otp" element={<OTPDriver />} />
+            <Route path="/driver/createpass" element={<CreatepassDriver />} />
+            <Route path="/driver/forgotpass" element={<ForgotpassDriver />} />
+            <Route path="/driver/drivertobiding" element={<Drivertobiding />} />
+            <Route path="/driver/biding" element={<Bidding />} />
+            <Route path="/driver/waiting" element={<WaitingDriver />} />
+            <Route path="/driver/bidcom" element={<BiddingcompletedDriver />} />
+            <Route path="/driver/home" element={<HomeDriver />} />
+            <Route path="/driver/checkdestination" element={<CheckDestination />} />
+            <Route path="/driver/chat" element={<ChatDriver />} />
 
-
-            
+            {/* จัดการเส้นทางที่ไม่พบ */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Home */}
             <Route
               path="/home"
               element={

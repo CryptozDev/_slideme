@@ -1,47 +1,47 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
-import path from "path"; // ใช้สำหรับเส้นทาง static files
+import path from "path"; // For serving static files
 
-const app = express(); // สร้างแอป Express
+const app = express();
 
-// เส้นทางไฟล์ static (สำหรับ React build)
+// Serve static files (optional, for built React app)
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "dist"))); // หาก React Build ออกมาใน "dist"
+app.use(express.static(path.join(__dirname, "dist"))); // Adjust the "dist" path if needed
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
-// สร้าง HTTP Server
+// Create HTTP server
 const server = http.createServer(app);
 
-// สร้าง Socket.IO Server
+// Initialize Socket.IO server
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173", // เปลี่ยน URL เป็น React App URL
+    origin: ["https://cryptozdev.github.io/_slideme"], // URL GitHub Pages ของคุณ
     methods: ["GET", "POST"],
   },
 });
 
-// เมื่อ Client เชื่อมต่อ
+// Handle socket connections
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  // ฟังข้อความจาก Client
+  // Listen for incoming messages
   socket.on("message", (message) => {
     console.log("Received message:", message);
-    io.emit("message", message); // ส่งข้อความไปยังทุก Client
+    io.emit("message", message); // Emit the message to all connected clients
   });
 
-  // เมื่อ Client ตัดการเชื่อมต่อ
+  // Handle disconnection
   socket.on("disconnect", () => {
     console.log("A user disconnected:", socket.id);
   });
 });
 
-// เริ่มต้นเซิร์ฟเวอร์
-const PORT = process.env.PORT || 3000; // ใช้ PORT จาก Environment หรือ Default 3000
+// Start the server
+const PORT = process.env.PORT || 3000; // Use environment variable or default to 3000
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
