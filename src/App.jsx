@@ -88,18 +88,18 @@ function App() {
 
             {/* เส้นทางของคนขับ */}
             <Route path="/driver" element={<SplashScreenDriver />} />
-            <Route path="/driver/login" element={<LoginDriver />} />
-            <Route path="/driver/register" element={<RegisterDriver />} />
-            <Route path="/driver/otp" element={<OTPDriver />} />
-            <Route path="/driver/createpass" element={<CreatepassDriver />} />
-            <Route path="/driver/forgotpass" element={<ForgotpassDriver />} />
-            <Route path="/driver/drivertobiding" element={<Drivertobiding />} />
-            <Route path="/driver/biding" element={<Bidding />} />
-            <Route path="/driver/waiting" element={<WaitingDriver />} />
-            <Route path="/driver/bidcom" element={<BiddingcompletedDriver />} />
-            <Route path="/driver/home" element={<HomeDriver />} />
-            <Route path="/driver/checkdestination" element={<CheckDestination />} />
-            <Route path="/driver/chat" element={<ChatDriver />} />
+            <Route path="/login-driver" element={<LoginDriver />} />
+            <Route path="/register-driver" element={<RegisterDriver />} />
+            <Route path="/otp-driver" element={<OTPDriver />} />
+            <Route path="/createpass-driver" element={<CreatepassDriver />} />
+            <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
+            <Route path="/drivertobiding" element={<Drivertobiding />} />
+            <Route path="/biding-driver" element={<Bidding />} />
+            <Route path="/waiting-driver" element={<WaitingDriver />} />
+            <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
+            <Route path="/home-driver" element={<HomeDriver />} />
+            <Route path="/checkdestination" element={<CheckDestination />} />
+            <Route path="/chat-driver" element={<ChatDriver />} />
 
             {/* จัดการเส้นทางที่ไม่พบ */}
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
