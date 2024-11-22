@@ -1,62 +1,29 @@
-import React, { useState, useEffect } from "react";
-import io from "socket.io-client";
-import Navbar from "./src/components/Navbar";
-import BottomNavBar from "./src/components/BottomNavBar";
-import DriverBottomNavBar from "./src/driver/DriverBottomNavBar";
-import "./src/components//ChatCustomer.css";
-import "./src/driver//ChatDriver.css";
+import express from "express";
+import http from "http";
+import { Server } from "socket.io";
 
-const socket = io("http://localhost:3000");
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5173", // Replace with your React app's URL
+    methods: ["GET", "POST"],
+  },
+});
 
-const ChatCustomer = () => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
+io.on("connection", (socket) => {
+  console.log("A user connected:", socket.id);
 
-  useEffect(() => {
-    socket.on("message", (message) => {
-      setMessages((prevMessages) => [...prevMessages, message]);
-    });
+  // Listen for incoming messages
+  socket.on("message", (message) => {
+    io.emit("message", message); // Emit message to all clients, including the sender
+  });
 
-    return () => socket.off("message");
-  }, []);
+  socket.on("disconnect", () => {
+    console.log("A user disconnected:", socket.id);
+  });
+});
 
-  const handleSendMessage = () => {
-    if (input.trim()) {
-      const message = { sender: "customer", text: input };
-      socket.emit("message", message); // Send message to server
-      setInput(""); // Clear input after sending
-    }
-  };
-
-  return (
-    <div className="chat-container">
-      <Navbar />
-      <div className="chat-header">
-        <h3>Chat with Driver</h3>
-      </div>
-      <div className="chat-messages">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`message ${msg.sender === "customer" ? "customer" : "driver"}`}
-          >
-            {msg.text}
-          </div>
-        ))}
-      </div>
-      <div className="chat-input">
-        <input
-          type="text"
-          placeholder="Type a message..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-      <BottomNavBar />
-      <DriverBottomNavBar />
-    </div>
-  );
-};
-
-export default ChatCustomer;
+server.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
