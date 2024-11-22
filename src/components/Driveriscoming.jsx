@@ -57,7 +57,7 @@ const Driveriscoming = () => {
             className="ride-icon"
           />
           <span>รถสไลด์</span>
-          <span className="ride-time">12 นาที</span>
+          <span className="ride-time">26 นาที</span>
           <span className="ride-price">1,500 บาท</span>
         </div>
 

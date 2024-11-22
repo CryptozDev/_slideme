@@ -23,49 +23,90 @@ import Payment from './components/Payment';
 import QrPayment from './components/QrPayment';
 import Waitpickup from './components/Waitpickup';
 import Driveriscoming from './components/Driveriscoming';
-// import Chat from './components/Chat';
+import ChatCustomer from './components/ChatCustomer';
+import { ChatProvider } from './components/ChatContext';
+
+import DriverBottomNavBar from './driver/DriverBottomNavBar';
+import SplashScreenDriver from './driver/SplashScreen';
+import LoginDriver from './driver/Login';
+import RegisterDriver from './driver/Register';
+import OTPDriver from './driver/OTP';
+import CreatepassDriver from './driver/Createpass';
+import ForgotpassDriver from './driver/Forgotpass';
+import Drivertobiding from './driver/Drivertobiding';
+import Bidding from './driver/Bidding';
+import WaitingDriver from './driver/Waiting';
+import BiddingcompletedDriver from './driver/Biddingcompleted';
+import HomeDriver from './driver/Home';
+import CheckDestination from './driver/CheckDestination';
+import ChatDriver from './driver/ChatDriver';
 
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        <Routes>
-          <Route path="/" element={<SplashScreen />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/detailform" element={<DetailForm />} />
-          <Route path="/otp" element={<OTP />} />
-          <Route path="/createpass" element={<Createpass />} />
-          <Route path="/forgotpass" element={<Forgotpass />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/destination" element={<DestinationSelect />} />
-          <Route path="/confirmdestination" element={<ConfirmDestination />} />
-          <Route path="/choosetowtruck" element={<Towtruck />} />
-          <Route path="/pickupdetail" element={<PickupDetail />} />
-          <Route path="/waiting" element={<Waiting />} />
-          <Route path="/bidcom" element={<Biddingcompleted />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/qrpayment" element={<QrPayment />} />
-          <Route path="/waitpickup" element={<Waitpickup />} />
-          <Route path="/driveriscoming" element={<Driveriscoming />} />
-          {/* <Route path="/chat" element={<Chat />} /> */}
-          <Route
-            path="/home"
-            element={
-              <>
-                <Navbar />
-                <div className="input-container">
-                  {/* Search input form */}
-                </div>
-                <MapView />
-                <MapHome />
-                <BottomNavBar />
-              </>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <ChatProvider>
+      <Router>
+        <div className="app-container">
+          <Routes>
+            <Route path="/" element={<SplashScreen />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/detailform" element={<DetailForm />} />
+            <Route path="/otp" element={<OTP />} />
+            <Route path="/createpass" element={<Createpass />} />
+            <Route path="/forgotpass" element={<Forgotpass />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/destination" element={<DestinationSelect />} />
+            <Route path="/confirmdestination" element={<ConfirmDestination />} />
+            <Route path="/choosetowtruck" element={<Towtruck />} />
+            <Route path="/pickupdetail" element={<PickupDetail />} />
+            <Route path="/waiting" element={<Waiting />} />
+            <Route path="/bidcom" element={<Biddingcompleted />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/qrpayment" element={<QrPayment />} />
+            <Route path="/waitpickup" element={<Waitpickup />} />
+            <Route path="/driveriscoming" element={<Driveriscoming />} />
+            <Route path="/chat-customer" element={<ChatCustomer />} />
+
+            
+            <Route path="/driver" element={<SplashScreenDriver />} />
+            <Route path="/login-driver" element={<LoginDriver />} />
+            <Route path="/register-driver" element={<RegisterDriver />} />
+            <Route path="/otp-driver" element={<OTPDriver />} />
+            <Route path="/createpass-driver" element={<CreatepassDriver />} />
+            <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
+            <Route path="/drivertobiding" element={<Drivertobiding />} />
+            <Route path='/biding-driver' element={<Bidding />} />
+            <Route path="/waiting-driver" element={<WaitingDriver />} />
+            <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
+            <Route path="/home-driver" element={<HomeDriver />} />
+            <Route path="/checkdestination-driver" element={<CheckDestination />} />
+            <Route path="/chat-driver" element={<ChatDriver />} />
+            {/* <Route path="/receive-job" element={<ReceiveJob />} />
+            <Route path="/current-job" element={<CurrentJob />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/profile" element={<Profile />} /> */}
+
+
+            
+            <Route
+              path="/home"
+              element={
+                <>
+                  <Navbar />
+                  <div className="input-container">
+                    {/* Search input form */}
+                  </div>
+                  <MapView />
+                  <MapHome />
+                  <BottomNavBar />
+                  <DriverBottomNavBar />
+                </>
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
+    </ChatProvider>
   );
 }
 
