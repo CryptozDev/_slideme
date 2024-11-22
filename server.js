@@ -1,58 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import express from "express";
+import http from "http";
+import { Server } from "socket.io";
+import path from "path"; // ใช้สำหรับเส้นทาง static files
 
-// เชื่อมต่อกับ Server URL
-const socket = io("https://slideme-rao3.onrender.com"); // เปลี่ยนเป็น URL ของ Backend ที่โฮสต์
+const app = express(); // สร้างแอป Express
 
-const path = require("path");
+// เส้นทางไฟล์ static (สำหรับ React build)
 const __dirname = path.resolve();
-
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "dist"))); // หาก React Build ออกมาใน "dist"
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
-const App = () => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
+// สร้าง HTTP Server
+const server = http.createServer(app);
 
-  useEffect(() => {
-    // ฟังข้อความใหม่จาก Server
-    socket.on("message", (message) => {
-      setMessages((prevMessages) => [...prevMessages, message]);
-    });
+// สร้าง Socket.IO Server
+const io = new Server(server, {
+  cors: {
+    origin: process.env.CLIENT_URL || "http://localhost:5173", // เปลี่ยน URL เป็น React App URL
+    methods: ["GET", "POST"],
+  },
+});
 
-    // ทำความสะอาดเมื่อ Component ถูก Unmount
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
+// เมื่อ Client เชื่อมต่อ
+io.on("connection", (socket) => {
+  console.log("A user connected:", socket.id);
 
-  const sendMessage = () => {
-    if (input.trim()) {
-      socket.emit("message", input); // ส่งข้อความไปยัง Server
-      setInput("");
-    }
-  };
+  // ฟังข้อความจาก Client
+  socket.on("message", (message) => {
+    console.log("Received message:", message);
+    io.emit("message", message); // ส่งข้อความไปยังทุก Client
+  });
 
-  return (
-    <div>
-      <h1>Chat App</h1>
-      <div style={{ border: "1px solid #ccc", padding: "10px", height: "300px", overflowY: "scroll" }}>
-        {messages.map((msg, index) => (
-          <div key={index}>{msg}</div>
-        ))}
-      </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Type a message..."
-      />
-      <button onClick={sendMessage}>Send</button>
-    </div>
-  );
-};
+  // เมื่อ Client ตัดการเชื่อมต่อ
+  socket.on("disconnect", () => {
+    console.log("A user disconnected:", socket.id);
+  });
+});
 
-export default App;
+// เริ่มต้นเซิร์ฟเวอร์
+const PORT = process.env.PORT || 3000; // ใช้ PORT จาก Environment หรือ Default 3000
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
