@@ -102,7 +102,7 @@ function App() {
             <Route path="/driver/chat" element={<ChatDriver />} />
 
             {/* จัดการเส้นทางที่ไม่พบ */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
             {/* Home */}
             <Route
               path="/home"
