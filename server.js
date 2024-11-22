@@ -1,47 +1,62 @@
-import express from "express";
-import http from "http";
-import { Server } from "socket.io";
-import path from "path"; // For serving static files
+import React, { useState, useEffect } from "react";
+import io from "socket.io-client";
+import Navbar from "./src/components/Navbar";
+import BottomNavBar from "./src/components/BottomNavBar";
+import DriverBottomNavBar from "./src/driver/DriverBottomNavBar";
+import "./src/components//ChatCustomer.css";
+import "./src/driver//ChatDriver.css";
 
-const app = express();
+const socket = io("http://localhost:3000");
 
-// Serve static files (optional, for built React app)
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "dist"))); // Adjust the "dist" path if needed
+const ChatCustomer = () => {
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-});
+  useEffect(() => {
+    socket.on("message", (message) => {
+      setMessages((prevMessages) => [...prevMessages, message]);
+    });
 
-// Create HTTP server
-const server = http.createServer(app);
+    return () => socket.off("message");
+  }, []);
 
-// Initialize Socket.IO server
-const io = new Server(server, {
-  cors: {
-    origin: ["https://cryptozdev.github.io/_slideme"], // URL GitHub Pages ของคุณ
-    methods: ["GET", "POST"],
-  },
-});
+  const handleSendMessage = () => {
+    if (input.trim()) {
+      const message = { sender: "customer", text: input };
+      socket.emit("message", message); // Send message to server
+      setInput(""); // Clear input after sending
+    }
+  };
 
-// Handle socket connections
-io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
+  return (
+    <div className="chat-container">
+      <Navbar />
+      <div className="chat-header">
+        <h3>Chat with Driver</h3>
+      </div>
+      <div className="chat-messages">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`message ${msg.sender === "customer" ? "customer" : "driver"}`}
+          >
+            {msg.text}
+          </div>
+        ))}
+      </div>
+      <div className="chat-input">
+        <input
+          type="text"
+          placeholder="Type a message..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button onClick={handleSendMessage}>Send</button>
+      </div>
+      <BottomNavBar />
+      <DriverBottomNavBar />
+    </div>
+  );
+};
 
-  // Listen for incoming messages
-  socket.on("message", (message) => {
-    console.log("Received message:", message);
-    io.emit("message", message); // Emit the message to all connected clients
-  });
-
-  // Handle disconnection
-  socket.on("disconnect", () => {
-    console.log("A user disconnected:", socket.id);
-  });
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000; // Use environment variable or default to 3000
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+export default ChatCustomer;
