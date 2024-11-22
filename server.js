@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
 // เชื่อมต่อกับ Server URL
-const socket = io("https://your-service-name.onrender.com"); // เปลี่ยนเป็น URL ของ Backend ที่โฮสต์
+const socket = io("https://slideme-rao3.onrender.com"); // เปลี่ยนเป็น URL ของ Backend ที่โฮสต์
 
 const path = require("path");
 const __dirname = path.resolve();
