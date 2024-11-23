@@ -17,8 +17,7 @@ const PriceRequestPopup = ({ onClose }) => {
           <div className="spinner"></div>
         </div>
         <div className="vehicle-info">
-          <p className="vehicle-type">รถสไลด์</p>
-          <p className="waiting-message">โปรดรอคนขับสักครู่</p>
+          <p className="waiting-message">โปรดรอสักครู่</p>
         </div>
         <button className="cancel-button" onClick={handleCancel}>
           ยกเลิก
