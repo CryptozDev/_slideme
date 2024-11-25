@@ -12,29 +12,36 @@
   font-size: 20px;
 }
 
-.chat-messages {
+.chat-messages1 {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column; 
 }
 
-.message {
+.message1 {
   margin: 5px 0;
   padding: 10px;
   border-radius: 10px;
+  word-wrap: break-word;
+  display: inline-block; 
 }
 
-.message.customer {
-  background-color: #2ea366;
-  color: white;
-  align-self: flex-end;
+.message1.customer {
+  background-color: #d9d9d9;
+  color: rgb(0, 0, 0);
+  align-self: flex-start; 
+  text-align: left;
 }
 
-.message.driver {
+.message1.driver {
   background-color: #f0f0f0;
   color: black;
-  align-self: flex-start;
+  align-self: flex-end; 
+  text-align: right;
 }
+
 
 .chat-input {
   display: flex;

@@ -32,11 +32,13 @@ const ChatCustomer = () => {
       <div className="chat-header">
         <h3>Chat with Driver</h3>
       </div>
-      <div className="chat-messages">
+      <div className="chat-messages1">
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`message ${msg.sender === "customer" ? "customer" : "driver"}`}
+            className={`message1 ${
+              msg.sender === "customer" ? "customer" : "driver"
+            }`}
           >
             {msg.text}
           </div>

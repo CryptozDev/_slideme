@@ -1,18 +1,26 @@
 // src/components/Driveriscoming.jsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
-import BottomNavBar from './BottomNavBar';
-import MapView from './MapView';
-import './Driveriscoming.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import BottomNavBar from "./BottomNavBar";
+import MapView from "./MapView";
+import "./Driveriscoming.css";
 
 const Driveriscoming = () => {
   const navigate = useNavigate();
 
   const handlecancel = (e) => {
     e.preventDefault();
-    navigate('/home');
-    }
+    navigate("/home");
+  };
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/star'); // เปลี่ยนไปที่หน้า /bidcom หลังจากผ่านไประยะหนึ่ง
+    }, 5000); // เปลี่ยน 5000 เป็นระยะเวลาที่คุณต้องการ (มิลลิวินาที)
+
+    return () => clearTimeout(timer); // ทำความสะอาด timer เมื่อคอมโพเนนต์นี้ unmount
+  }, [navigate]);
 
   return (
     <div className="driver-is-coming-container">
@@ -20,20 +28,34 @@ const Driveriscoming = () => {
       <MapView />
 
       <div>
-      <div className="info-card">
-        <div className="driver-info">
-            <img
-              src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"
-              alt="Driver"
-              className="driver-image"
-            />
-            <div className="driver-details">
+        <div className="info-card">
+          <div className="driver-info">
+            <Link to="/data-driver">
+              <img
+                src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"
+                alt="Driver"
+                className="driver-image"
+              />
+            </Link>
+            <div className="driver-dt">
               <h4>สมชาย</h4>
               <span className="rating">⭐ 4.9</span>
             </div>
             <div className="contact-icons">
-              <img src="https://img2.pic.in.th/pic/chat96a103a3a0de24a4.png" alt="Chat" className="icon contact-icon" />
-              <img src="https://img5.pic.in.th/file/secure-sv1/call2a608874f06be4da.png" alt="Call" className="icon contact-icon" />
+              <Link to="/chat-customer">
+                <img
+                  src="https://img2.pic.in.th/pic/chat96a103a3a0de24a4.png"
+                  alt="Chat"
+                  className="icon contact-icon"
+                />
+              </Link>
+              <Link to="/call">
+                <img
+                  src="https://img5.pic.in.th/file/secure-sv1/call2a608874f06be4da.png"
+                  alt="Call"
+                  className="icon contact-icon"
+                />
+              </Link>
             </div>
           </div>
 
@@ -61,7 +83,9 @@ const Driveriscoming = () => {
             <span className="ride-price">1,500 บาท</span>
           </div>
 
-          <button className="cancel-button" onClick={handlecancel}>ยกเลิก</button>
+          <button className="cancel-button" onClick={handlecancel}>
+            ยกเลิก
+          </button>
         </div>
       </div>
       <BottomNavBar />

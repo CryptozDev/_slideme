@@ -23,7 +23,10 @@ import Payment from './components/Payment';
 import QrPayment from './components/QrPayment';
 import Waitpickup from './components/Waitpickup';
 import Driveriscoming from './components/Driveriscoming';
-import ChatCustomer from './components/ChatCustomer';
+import Datadriver from './components/Datadriver'; 
+import Call from './components/Call';
+import CallDriver from './driver/CallDriver';
+// import ChatCustomer from './components/ChatCustomer';
 import { ChatProvider } from './components/ChatContext';
 
 import DriverBottomNavBar from './driver/DriverBottomNavBar';
@@ -33,13 +36,26 @@ import RegisterDriver from './driver/Register';
 import OTPDriver from './driver/OTP';
 import CreatepassDriver from './driver/Createpass';
 import ForgotpassDriver from './driver/Forgotpass';
+import AcceptingWork from './driver/AcceptingWork';
 import Drivertobiding from './driver/Drivertobiding';
 import Bidding from './driver/Bidding';
 import WaitingDriver from './driver/Waiting';
 import BiddingcompletedDriver from './driver/Biddingcompleted';
 import HomeDriver from './driver/Home';
+import JobDetail from './driver/Jobdetail';
 import CheckDestination from './driver/CheckDestination';
-import ChatDriver from './driver/ChatDriver';
+// import ChatDriver from './driver/ChatDriver';
+
+// import Chat from './slideme/Chat';
+
+import ChatAdmin from './components/Chatadmin';
+import Tip from './components/Tip';
+import Notifications from './components/notifications';
+import NotificationsDriver from './driver/Notificationsdriver';
+import Star from './components/Form';
+import Driveraccount from './driver/Driveraccount'; 
+import Drivinglicense from './driver/Drivinglicense'; 
+import PriceTable from './driver/table'; 
 
 function App() {
 
@@ -56,6 +72,7 @@ function App() {
             <Route path="/otp" element={<OTP />} />
             <Route path="/createpass" element={<Createpass />} />
             <Route path="/forgotpass" element={<Forgotpass />} />
+            <Route path="/notifications" element={<Notifications />} />
             <Route path="/home" element={<Home />} />
             <Route path="/destination" element={<DestinationSelect />} />
             <Route path="/confirmdestination" element={<ConfirmDestination />} />
@@ -67,22 +84,37 @@ function App() {
             <Route path="/qrpayment" element={<QrPayment />} />
             <Route path="/waitpickup" element={<Waitpickup />} />
             <Route path="/driveriscoming" element={<Driveriscoming />} />
-            <Route path="/chat-customer" element={<ChatCustomer />} />
+            <Route path="/call" element={<Call />} />
+            <Route path="/star" element={<Star />} />
+            <Route path="/tip" element={<Tip />} />
+            <Route path="/chat-admin" element={<ChatAdmin />} />
+            {/* <Route path="/chat-customer" element={<ChatCustomer />} /> */}
 
             {/* เส้นทางของคนขับ */}
             <Route path="/driver" element={<SplashScreenDriver />} />
             <Route path="/login-driver" element={<LoginDriver />} />
             <Route path="/register-driver" element={<RegisterDriver />} />
+            <Route path="/account-driver" element={<Driveraccount />} />
+            <Route path="/driving-license" element={<Drivinglicense />} />
             <Route path="/otp-driver" element={<OTPDriver />} />
             <Route path="/createpass-driver" element={<CreatepassDriver />} />
             <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
+            <Route path="/notifications-driver" element={<NotificationsDriver />} />
+            <Route path="/receive-job" element={<AcceptingWork />} />
             <Route path="/drivertobiding" element={<Drivertobiding />} />
             <Route path="/biding-driver" element={<Bidding />} />
+            <Route path="/pricetable" element={<PriceTable />} />
             <Route path="/waiting-driver" element={<WaitingDriver />} />
             <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
             <Route path="/home-driver" element={<HomeDriver />} />
+            <Route path="/jobdetail" element={<JobDetail />} />
             <Route path="/checkdestination" element={<CheckDestination />} />
-            <Route path="/chat-driver" element={<ChatDriver />} />
+            <Route path="/call-driver" element={<CallDriver />} />
+            {/* <Route path="/chat-driver" element={<ChatDriver />} /> */}
+
+            {/* เช็คงานเฉยๆ */}
+            <Route path="/data-driver" element={<Datadriver />} />
+
 
             {/* จัดการเส้นทางที่ไม่พบ */}
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
@@ -97,8 +129,8 @@ function App() {
                   </div>
                   <MapView />
                   <MapHome />
-                  <BottomNavBar />
                   <DriverBottomNavBar />
+                  <BottomNavBar />
                 </>
               }
             />

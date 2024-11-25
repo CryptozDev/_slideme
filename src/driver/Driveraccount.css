@@ -1,0 +1,104 @@
+.Driveraccount-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+  }
+  
+  .Driveraccount-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Driveraccount-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2EA366;
+  }
+  
+  .Driveraccount-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .Driveraccount-form .form-control,
+  .Driveraccount-form .form-select {
+    border-radius: 5px;
+  }
+  
+  .Driveraccount-form .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  .Driveraccount-form .form-check-label {
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2EA366;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2d8457;
+  }
+
+  .Select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto; 
+    padding: 8px 12px; 
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #2EA366;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .Select:hover {
+    background-color: #2d8457;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Select:active {
+    background-color: #276b4d;
+  }
+  
+  .Select span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+  }
+  
+  .Select .bi-search {
+    font-size: 16px;
+    margin-right: 6px; 
+  }
+  
+  .Select-container {
+    display: flex;
+    justify-content: flex-start; 
+    margin-bottom: 15px; 
+  }
+  
+  
+  

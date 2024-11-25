@@ -1,0 +1,90 @@
+.call-screen-wrapper {
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 350px;
+  height: 600px;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.call-screen-profile {
+  text-align: center;
+}
+
+.call-screen-profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+.call-screen-name {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.call-screen-connection-status {
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.call-screen-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.call-screen-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.call-screen-buttons button i {
+  font-size: 24px;
+}
+
+.call-screen-button-label {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+
+.call-screen-end-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.call-screen-end-button button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.call-screen-end-button i {
+  font-size: 24px;
+  color: #ff0000;
+}

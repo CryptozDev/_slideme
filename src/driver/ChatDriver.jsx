@@ -36,7 +36,9 @@ const ChatDriver = () => {
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`message ${msg.sender === "driver" ? "driver" : "customer"}`}
+            className={`message ${
+              msg.sender === "driver" ? "driver" : "customer"
+            }`}
           >
             {msg.text}
           </div>

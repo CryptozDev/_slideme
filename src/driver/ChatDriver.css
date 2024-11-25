@@ -16,24 +16,30 @@
   flex: 1;
   padding: 10px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column; 
 }
 
 .message {
   margin: 5px 0;
   padding: 10px;
   border-radius: 10px;
+  word-wrap: break-word;
+  display: inline-block; 
+}
+
+.message.customer {
+  background-color: #2ea366;
+  color: white;
+  align-self: flex-start; 
+  text-align: left;
 }
 
 .message.driver {
   background-color: #2ea366;
-  color: white;
-  align-self: flex-end;
-}
-
-.message.customer {
-  background-color: #f0f0f0;
-  color: black;
-  align-self: flex-start;
+  color: rgb(255, 255, 255);
+  align-self: flex-end; 
+  text-align: right;
 }
 
 .chat-input {

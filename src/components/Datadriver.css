@@ -1,0 +1,117 @@
+.datadriver-container {
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh; /* เต็มความสูงของหน้าจอ */
+    padding: 20px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0;
+}
+
+.datadriver {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.datadriver img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.name p {
+    margin: 0;
+    padding: 2px 0;
+    font-size: 16px;
+}
+
+.button-container {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    margin-top: -10px;
+}
+
+.button-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2EA366;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.button-icon:hover {
+    background-color: #000000;
+}
+
+.button-icon:active {
+    background-color: #2EA366;
+}
+
+.data {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.data-header h6, .driving-history h6, .reviews h6 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.data-header p, .driving-history p, .review-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 4px 0;
+}
+
+.driving-history, .reviews {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-item {
+    margin-bottom: 10px;
+}
+
+.review-item p {
+    margin: 2px 0;
+    color: #444;
+}
+
+/* ขนาดสำหรับหน้าจอเล็ก (โทรศัพท์) */
+@media (max-width: 768px) {
+    .datadriver-container {
+        width: 100%;
+        max-width: 350px;
+        height: 750px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}

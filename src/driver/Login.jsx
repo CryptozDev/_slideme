@@ -12,7 +12,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log('Logging in with:', { phone, password });
-    navigate('/drivertobiding');
+    navigate('/receive-job');
   };
 
   const togglePasswordVisibility = () => {
