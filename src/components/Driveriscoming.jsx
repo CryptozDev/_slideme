@@ -17,7 +17,7 @@ const Driveriscoming = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/star'); // เปลี่ยนไปที่หน้า /bidcom หลังจากผ่านไประยะหนึ่ง
-    }, 5000); // เปลี่ยน 5000 เป็นระยะเวลาที่คุณต้องการ (มิลลิวินาที)
+    }, 15000); // เปลี่ยน 5000 เป็นระยะเวลาที่คุณต้องการ (มิลลิวินาที)
 
     return () => clearTimeout(timer); // ทำความสะอาด timer เมื่อคอมโพเนนต์นี้ unmount
   }, [navigate]);
