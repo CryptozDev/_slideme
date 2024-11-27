@@ -8,19 +8,19 @@ const DriverBottomNavBar = () => {
   return (
     <div className="driver-bottom-navbar">
       <button className="nav-button" onClick={() => navigate('/receive-job')}>
-        <img src="/icons/receive-job.png" alt="รับงาน" />
+        <img src="https://img5.pic.in.th/file/secure-sv1/job-creation.png" alt="รับงาน" />
         <span>รับงาน</span>
       </button>
       <button className="nav-button" onClick={() => navigate('/current-job')}>
-        <img src="/icons/current-job.png" alt="งานปัจจุบัน" />
+        <img src="https://img2.pic.in.th/pic/accepted.png" alt="งานปัจจุบัน" />
         <span>งานปัจจุบัน</span>
       </button>
       <button className="nav-button" onClick={() => navigate('/history')}>
-        <img src="/icons/history.png" alt="History" />
+        <img src="https://img2.pic.in.th/pic/history15811cb8693c0087.png" alt="History" />
         <span>ประวัติ</span>
       </button>
       <button className="nav-button" onClick={() => navigate('/profile')}>
-        <img src="/icons/profile.png" alt="Profile" />
+        <img src="https://img5.pic.in.th/file/secure-sv1/user0d6854e84a6b9e29.png" alt="Profile" />
         <span>โปรไฟล์</span>
       </button>
     </div>

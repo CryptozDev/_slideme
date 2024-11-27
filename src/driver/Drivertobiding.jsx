@@ -14,30 +14,38 @@ const Drivertobiding = () => {
     navigate('/biding-driver');
     }
 
+  const handlecallingtocustomer = () => {
+    navigate('/call-driver');
+  }
+
+  const handlechatingtocustomer = () => {
+    navigate('/chat-driver');
+  }
+
   return (
-    <div className="driver-is-coming-container">
+    <div className="dtob-container">
       <Navbar />
       <MapView />
 
       <div>
-      <div className="info-card">
-        <div className="driver-info">
+      <div className="infloww-card">
+        <div className="driver-infloww">
             <img
               src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"
               alt="Driver"
               className="driver-image"
             />
-            <div className="driver-details">
+            <div className="dtdriverrrr">
               <h4>น้องแดน</h4>
               <span className="rating">096-XXX-XXXX</span>
             </div>
             <div className="contact-icons">
-              <img src="https://img2.pic.in.th/pic/chat96a103a3a0de24a4.png" alt="Chat" className="icon contact-icon" />
-              <img src="https://img5.pic.in.th/file/secure-sv1/call2a608874f06be4da.png" alt="Call" className="icon contact-icon" />
+              <img src="https://img2.pic.in.th/pic/chat96a103a3a0de24a4.png" alt="Chat" className="icon contact-icon" onClick={handlechatingtocustomer}/>
+              <img src="https://img5.pic.in.th/file/secure-sv1/call2a608874f06be4da.png" alt="Call" className="icon contact-icon" onClick={handlecallingtocustomer}/>
             </div>
           </div>
 
-          <div className="location-info">
+          <div className="location-infloww">
             <div className="location-item">
               <span className="green-dot">🟢</span>
               <span className="location-text">ใกล้ฟิวเจอร์ปาร์ครังสิต</span>

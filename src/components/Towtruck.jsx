@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './Navbar';
-import BottomNavBar from './BottomNavBar';
 import MapView from './MapView';
 import { useNavigate } from 'react-router-dom';
 import './Towtruck.css';
@@ -40,7 +39,6 @@ const Towtruck = () => {
           </div>
         </div>
       </div>
-      <BottomNavBar />
     </div>
   );
 };

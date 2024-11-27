@@ -17,7 +17,7 @@ const Driveriscoming = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/star'); // เปลี่ยนไปที่หน้า /bidcom หลังจากผ่านไประยะหนึ่ง
-    }, 15000); // เปลี่ยน 5000 เป็นระยะเวลาที่คุณต้องการ (มิลลิวินาที)
+    }, 7000); // เปลี่ยน 5000 เป็นระยะเวลาที่คุณต้องการ (มิลลิวินาที)
 
     return () => clearTimeout(timer); // ทำความสะอาด timer เมื่อคอมโพเนนต์นี้ unmount
   }, [navigate]);
@@ -28,8 +28,8 @@ const Driveriscoming = () => {
       <MapView />
 
       <div>
-        <div className="info-card">
-          <div className="driver-info">
+        <div className="infooo-card">
+          <div className="driver-infooo">
             <Link to="/data-driver">
               <img
                 src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"
@@ -59,7 +59,7 @@ const Driveriscoming = () => {
             </div>
           </div>
 
-          <div className="location-info">
+          <div className="location-infooo">
             <div className="location-item">
               <span className="green-dot">🟢</span>
               <span className="location-text">ใกล้ฟิวเจอร์ปาร์ครังสิต</span>

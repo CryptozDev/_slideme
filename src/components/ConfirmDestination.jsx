@@ -2,7 +2,6 @@
 import React from 'react';
 import './ConfirmDestination.css';
 import Navbar from './Navbar';
-import BottomNavBar from './BottomNavBar';
 import MapView from './MapView';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,7 +45,6 @@ const ConfirmDestination = () => {
           </div>
         </div>
       </div>
-      <BottomNavBar />
     </div>
   );
 };

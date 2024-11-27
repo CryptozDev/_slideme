@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate, useLocation, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MapView from './components/MapView';
 import MapHome from './components/MapHome';
@@ -25,7 +25,11 @@ import Waitpickup from './components/Waitpickup';
 import Driveriscoming from './components/Driveriscoming';
 import Datadriver from './components/Datadriver'; 
 import Call from './components/Call';
-import CallDriver from './driver/CallDriver';
+import ChatCustomer from './components/Chat';
+import ChatAdmin from './components/Chatadmin';
+import Star from './components/Form';
+import Tip from './components/Tip';
+import Notifications from './components/notifications';
 // import ChatCustomer from './components/ChatCustomer';
 import { ChatProvider } from './components/ChatContext';
 
@@ -33,29 +37,41 @@ import DriverBottomNavBar from './driver/DriverBottomNavBar';
 import SplashScreenDriver from './driver/SplashScreen';
 import LoginDriver from './driver/Login';
 import RegisterDriver from './driver/Register';
+import Driveraccount from './driver/Driveraccount'; 
+import Drivinglicense from './driver/Drivinglicense'; 
 import OTPDriver from './driver/OTP';
 import CreatepassDriver from './driver/Createpass';
 import ForgotpassDriver from './driver/Forgotpass';
-import AcceptingWork from './driver/AcceptingWork';
+import ReceiveJob from './driver/ReceiveJob';
 import Drivertobiding from './driver/Drivertobiding';
 import Bidding from './driver/Bidding';
+import PriceTable from './driver/table'; 
 import WaitingDriver from './driver/Waiting';
 import BiddingcompletedDriver from './driver/Biddingcompleted';
 import HomeDriver from './driver/Home';
 import JobDetail from './driver/Jobdetail';
 import CheckDestination from './driver/CheckDestination';
+import CallDriver from './driver/CallDriver';
+import ChatDriver from './driver/DriverChat';
 // import ChatDriver from './driver/ChatDriver';
-
-// import Chat from './slideme/Chat';
-
-import ChatAdmin from './components/Chatadmin';
-import Tip from './components/Tip';
-import Notifications from './components/notifications';
 import NotificationsDriver from './driver/Notificationsdriver';
-import Star from './components/Form';
-import Driveraccount from './driver/Driveraccount'; 
-import Drivinglicense from './driver/Drivinglicense'; 
-import PriceTable from './driver/table'; 
+import Menu from './components/Menu';
+import MenuDriver from './driver/Menu';
+import Report from './components/report';
+import SectionPage from "./SectionPage";
+import PaymentDetails from "./Payment/payment-details";
+import FAQDetails from "./FAQ/FAQDetails";
+import Promacions from "./Promotions/Promacions";
+import Private from "./Privacy&Security/Private";
+import Aboutus from "./About/Aboutus";
+import Profile from "./Profile/profile";
+import HistoryPage from "./HistoryUser/HistoryPage";
+import Informationapp from "./Accountinfo/Informationapp";
+import Driverhistory from "./HistoryDriver/Driverhistory";
+import Prodriver from "./Prodriver/Prodriver"; 
+import SlideMeForm from "./SlideMeForm/SlideMeForm";
+
+
 
 function App() {
 
@@ -84,11 +100,13 @@ function App() {
             <Route path="/qrpayment" element={<QrPayment />} />
             <Route path="/waitpickup" element={<Waitpickup />} />
             <Route path="/driveriscoming" element={<Driveriscoming />} />
+            <Route path="/data-driver" element={<Datadriver />} />
             <Route path="/call" element={<Call />} />
             <Route path="/star" element={<Star />} />
             <Route path="/tip" element={<Tip />} />
             <Route path="/chat-admin" element={<ChatAdmin />} />
-            {/* <Route path="/chat-customer" element={<ChatCustomer />} /> */}
+            <Route path="/chat-customer" element={<ChatCustomer />} />
+            <Route path="/menu" element={<Menu />} />
 
             {/* เส้นทางของคนขับ */}
             <Route path="/driver" element={<SplashScreenDriver />} />
@@ -100,7 +118,7 @@ function App() {
             <Route path="/createpass-driver" element={<CreatepassDriver />} />
             <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
             <Route path="/notifications-driver" element={<NotificationsDriver />} />
-            <Route path="/receive-job" element={<AcceptingWork />} />
+            <Route path="/receive-job" element={<ReceiveJob />} />
             <Route path="/drivertobiding" element={<Drivertobiding />} />
             <Route path="/biding-driver" element={<Bidding />} />
             <Route path="/pricetable" element={<PriceTable />} />
@@ -110,13 +128,26 @@ function App() {
             <Route path="/jobdetail" element={<JobDetail />} />
             <Route path="/checkdestination" element={<CheckDestination />} />
             <Route path="/call-driver" element={<CallDriver />} />
-            {/* <Route path="/chat-driver" element={<ChatDriver />} /> */}
-
-            {/* เช็คงานเฉยๆ */}
-            <Route path="/data-driver" element={<Datadriver />} />
+            <Route path="/chat-driver" element={<ChatDriver />} />
+            <Route path="/menu-driver" element={<MenuDriver />} />
 
 
-            {/* จัดการเส้นทางที่ไม่พบ */}
+            {/* Khing */}
+            <Route path="/report" element={<Report />} />
+            <Route path="/section" element={<SectionPage />} />
+            <Route path="/payment-details" element={<PaymentDetails />} />
+            <Route path="/FAQDetails" element={<FAQDetails />} />
+            <Route path="/Promacions" element={<Promacions />} />
+            <Route path="/Private" element={<Private />} />
+            <Route path="/Aboutus" element={<Aboutus />} />
+            <Route path="/Informationapp" element={<Informationapp />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/driverhis" element={<Driverhistory />} />
+            <Route path="/prodriver" element={<Prodriver />} /> 
+            <Route path="/slideMeForm" element={<SlideMeForm />} /> 
+
+
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
             {/* Home */}
             <Route

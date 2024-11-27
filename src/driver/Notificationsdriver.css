@@ -1,4 +1,4 @@
-.notification-wrapper {
+.driver-notification-wrapper {
   margin: 0 auto;
   background-color: #ffffff;
   width: 100%;
@@ -11,7 +11,7 @@
   box-shadow: none;
 }
 
-.notification-header {
+.driver-notification-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,13 +20,33 @@
   margin-bottom: 16px;
 }
 
-.notification-header h2 {
+.driver-notification-header h2 {
   font-size: 1.4em;
   margin: 0;
   color: #333;
 }
 
-.notification-clear-btn {
+.driver-back-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #2ea366;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+  margin-right: 10px;
+}
+
+.driver-back-btn:hover {
+  background-color: #389163;
+}
+
+.driver-clear-btn {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -41,18 +61,18 @@
   transition: background-color 0.2s ease;
 }
 
-.notification-clear-btn:hover {
+.driver-clear-btn:hover {
   background-color: #ff4c4c;
 }
 
-.notification-list {
+.driver-notification-list {
   margin-top: 20px;
   overflow-y: auto;
   max-height: 80vh;
   padding-right: 10px;
 }
 
-.notification-item {
+.driver-notification-item {
   padding: 15px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -62,23 +82,23 @@
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.notification-item:hover {
+.driver-notification-item:hover {
   background-color: #eaf5ff;
 }
 
-.notification-message {
+.driver-notification-message {
   font-size: 1em;
   color: #333;
 }
 
-.notification-time {
+.driver-notification-time {
   font-size: 0.8em;
   color: #888;
   margin-top: 5px;
   text-align: right;
 }
 
-.notification-empty {
+.driver-notification-empty {
   font-size: 1em;
   color: #999;
   text-align: center;
@@ -86,7 +106,7 @@
 }
 
 @media (max-width: 768px) {
-  .notification-wrapper {
+  .driver-notification-wrapper {
     width: 100%;
     max-width: 400px;
     height: 600px;

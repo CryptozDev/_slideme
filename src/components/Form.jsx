@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Form.css";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
-  const [rating, setRating] = useState(0);
   const navigate = useNavigate();
 
-  const handleContinue = () => {
+  const handletocontinue = () => {
     navigate("/tip");
-  };
+  }
+  const [rating, setRating] = useState(0);
 
   const handleStarClick = (value) => {
     setRating(value);
@@ -47,14 +47,19 @@ function Form() {
           ))}
         </ul>
       </div>
-      
+
       {/* รายละเอียดเพิ่มเติม */}
       <div className="driver-details">
-        <p><strong>ทะเบียนรถ:</strong> 1กข 1234</p>
-        <p><strong>คะแนนสะสม:</strong> ⭐ 4.9</p>
-        <p><strong>งานที่เสร็จสมบูรณ์:</strong> 120 งาน</p>
+        <p>
+          <strong>ทะเบียนรถ:</strong> 1กข 1234
+        </p>
+        <p>
+          <strong>คะแนนสะสม:</strong> ⭐ 4.9
+        </p>
+        <p>
+          <strong>งานที่เสร็จสมบูรณ์:</strong> 120 งาน
+        </p>
       </div>
-
 
       {/* แสดงความคิดเห็นของคุณ */}
       <div className="comment">
@@ -66,7 +71,7 @@ function Form() {
       </div>
 
       {/* ปุ่มดำเนินการต่อ */}
-      <button className="form-btn" onClick={handleContinue}>ดำเนินการต่อ</button>
+      <button className="form-btn" onClick={handletocontinue}>ดำเนินการต่อ</button>
     </div>
   );
 }

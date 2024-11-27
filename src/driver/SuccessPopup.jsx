@@ -17,7 +17,7 @@ const SuccessPaymentPopup = () => {
         </div>
         <h3 className="popup-title">การเสนอราคาเสร็จสิ้น</h3>
         <p className="waiting-message">ลูกค้าได้ยอมรับการเสนอราคาเรียบร้อย</p>
-        <button className="continue-button" onClick={handleContinue}>
+        <button className="conbtnnt" onClick={handleContinue}>
           ต่อไป
         </button>
       </div>

@@ -1,12 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './PriceRequestPopup.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./PriceRequestPopup.css";
 
 const PriceRequestPopup = ({ onClose }) => {
   const navigate = useNavigate();
 
   const handleCancel = () => {
-    navigate('/driver'); // นำทางไปหน้า /home
+    navigate("/drivertobiding"); // นำทางไปหน้า /home
   };
 
   return (

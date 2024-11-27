@@ -1,4 +1,4 @@
-.driver-is-coming-container {
+.dtob-container {
   position: relative;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   background-color: #f9f9f9;
 }
 
-.info-card {
+.infloww-card {
   position: fixed;
   bottom: 80px;
   left: 50%;
@@ -21,7 +21,7 @@
   z-index: 10;
 }
 
-.driver-info {
+.driver-infloww {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +65,7 @@
   cursor: pointer;
 }
 
-.location-info {
+.location-infloww {
   text-align: left;
   margin-bottom: 20px;
   padding: 0 15px;
@@ -133,7 +133,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .info-card {
+  .infloww-card {
     width: 95%; /* เพิ่มความกว้างสำหรับหน้าจอเล็ก */
     padding: 20px; /* ลด padding */
   }
@@ -167,11 +167,11 @@
 }
 
 @media (max-width: 480px) {
-  .info-card {
+  .infloww-card {
     bottom: 60px; /* ลดระยะห่างสำหรับหน้าจอที่เล็กมาก */
   }
 
-  .driver-info {
+  .driver-infloww {
     flex-direction: row; /* แสดงข้อมูลในแนวตั้ง */
     align-items: flex-start; /* ชิดซ้าย */
   }

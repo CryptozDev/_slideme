@@ -20,26 +20,29 @@ function Notificationsdriver() {
   };
 
   return (
-    <div className="notification-wrapper">
-      <div className="notification-header">
+    <div className="driver-notification-wrapper">
+      <div className="driver-notification-header">
+        <button className="driver-back-btn bi bi-arrow-left"></button>
         <h2>การแจ้งเตือน 🚗</h2>
         <button
-          className="notification-clear-btn bi bi-trash"
+          className="driver-clear-btn bi bi-trash"
           onClick={clearNotifications}
         ></button>
       </div>
-      <div className="notification-list">
+      <div className="driver-notification-list">
         {notifications.length > 0 ? (
           notifications.map((notification, index) => (
-            <div key={index} className="notification-item">
-              <span className="notification-message">{notification}</span>
-              <span className="notification-time">
+            <div key={index} className="driver-notification-item">
+              <span className="driver-notification-message">
+                {notification}
+              </span>
+              <span className="driver-notification-time">
                 เมื่อ {2 + index} ชั่วโมงก่อน
               </span>
             </div>
           ))
         ) : (
-          <p className="notification-empty">ไม่มีการแจ้งเตือน</p>
+          <p className="driver-notification-empty">ไม่มีการแจ้งเตือน</p>
         )}
       </div>
     </div>

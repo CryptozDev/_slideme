@@ -16,8 +16,8 @@ const PickupDetail = () => {
       <Navbar />
       <div className="pickup-detail-content">
         <h2 className="title">รายละเอียดคำขอเสนอราคา</h2>
-        <div className="price-icon">
-          <img src="https://img5.pic.in.th/file/secure-sv1/image-removebg-preview-249e5b2dc7d633d50.png" alt="Price Icon" className="icon-image" />
+        <div className="priceeeee-icon">
+          <img src="https://img5.pic.in.th/file/secure-sv1/image-removebg-preview-249e5b2dc7d633d50.png" alt="price Icon" className="icon-image" />
         </div>
         <div className="location-info">
           <div className="first-location-item">

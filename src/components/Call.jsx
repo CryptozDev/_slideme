@@ -1,8 +1,12 @@
-import { useState } from 'react';
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Call.css";
 
 function Call() {
+  const navigate = useNavigate();
+  const handleEndCall = () => {
+    navigate(-1);
+  }
   // สร้าง state การเปิด/ปิดของไมค์, กล้อง, ลำโพง
   const [micOn, setMicOn] = useState(true);
   const [cameraOn, setCameraOn] = useState(true);
@@ -10,25 +14,25 @@ function Call() {
 
   // ฟังก์ชันเล่นเสียง
   const playClickSound = () => {
-    const audio = new Audio("./public/click-sound.wav"); 
+    const audio = new Audio("./public/click-sound.wav");
     audio.play();
   };
 
   // สลับสถานะไมค์
   const toggleMic = () => {
-    playClickSound();  // เล่นเสียง
+    playClickSound(); // เล่นเสียง
     setMicOn(!micOn);
   };
 
   // สลับสถานะกล้อง
   const toggleCamera = () => {
-    playClickSound();  
+    playClickSound();
     setCameraOn(!cameraOn);
   };
 
   // สลับสถานะลำโพง
   const toggleSpeaker = () => {
-    playClickSound();  
+    playClickSound();
     setSpeakerOn(!speakerOn);
   };
 
@@ -50,27 +54,39 @@ function Call() {
         <div className="call-button">
           <div>
             <button onClick={toggleMic}>
-              <i className={`bi ${micOn ? 'bi-mic' : 'bi-mic-mute'}`}></i>
+              <i className={`bi ${micOn ? "bi-mic" : "bi-mic-mute"}`}></i>
             </button>
-            <p className="call-button-text">{micOn ? 'เปิดไมค์' : 'ปิดไมค์'}</p>
+            <p className="call-button-text">{micOn ? "เปิดไมค์" : "ปิดไมค์"}</p>
           </div>
 
           <div>
             <button onClick={toggleCamera}>
-              <i className={`bi ${cameraOn ? 'bi-camera-video-off' : 'bi bi-camera-video'}`}></i>
+              <i
+                className={`bi ${
+                  cameraOn ? "bi-camera-video-off" : "bi bi-camera-video"
+                }`}
+              ></i>
             </button>
-            <p className="call-button-text">{cameraOn ? 'ปิดกล้อง' : 'เปิดกล้อง'}</p>
+            <p className="call-button-text">
+              {cameraOn ? "ปิดกล้อง" : "เปิดกล้อง"}
+            </p>
           </div>
 
           <div>
             <button onClick={toggleSpeaker}>
-              <i className={`bi ${speakerOn ? 'bi-volume-mute' : 'bi-volume-up'}`}></i>
+              <i
+                className={`bi ${
+                  speakerOn ? "bi-volume-mute" : "bi-volume-up"
+                }`}
+              ></i>
             </button>
-            <p className="call-button-text">{speakerOn ? 'ปิดลำโพง' : 'เปิดลำโพง'}</p>
+            <p className="call-button-text">
+              {speakerOn ? "ปิดลำโพง" : "เปิดลำโพง"}
+            </p>
           </div>
         </div>
 
-        <div className="end-call-button">
+        <div className="end-call-button" onClick={handleEndCall}>
           <button>
             <i className="bi bi-x-lg"></i>
           </button>

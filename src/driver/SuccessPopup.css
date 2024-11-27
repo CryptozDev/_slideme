@@ -40,7 +40,7 @@
     margin-bottom: 20px;
   }
   
-  .continue-button {
+  .conbtnnt {
     background-color: transparent;
     color: #2ea366;
     border: none;
@@ -56,6 +56,6 @@
     padding-top: 10px;
   }
   
-  .continue-button:hover {
+  .conbtnnt:hover {
     color: #1d854c;
   }  

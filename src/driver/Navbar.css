@@ -1,4 +1,3 @@
-/* src/components/Navbar.css */
 .navbar-container {
   display: flex;
   align-items: center;
@@ -10,7 +9,7 @@
 }
 
 .navbar-left, .navbar-right {
-  flex: 0 0 50px; /* กำหนดขนาดของพื้นที่ด้านซ้ายและขวาให้คงที่ */
+  flex: 0 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,18 +17,23 @@
 
 .navbar-logo {
   flex: 1;
-  width: 50px;
-  max-width: 50px;
+  text-align: center;
   color: #2EA366;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .menu-icon, .notification-icon {
   background: none;
   border: none;
-  font-size: 1.5em; /* ขนาดไอคอน */
   cursor: pointer;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbar-icon {
+  width: 24px;
+  height: 24px;
 }

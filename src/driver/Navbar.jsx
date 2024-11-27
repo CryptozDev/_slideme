@@ -1,21 +1,48 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
-/* Navbar adjustments for iPhone 13 Pro mobile view */
+const Navbar = () => {
+  const navigate = useNavigate();
 
-import React from 'react';
-import './Navbar.css';
+  const handleMenuClick = () => {
+    navigate("/menu-driver");
+  };
 
-function Navbar() {
+  const handleNotificationClick = () => {
+    navigate("/notifications-driver");
+  };
+
   return (
     <div className="navbar-container">
       <div className="navbar-left">
-        <button className="menu-icon">☰</button> {/* Menu icon for mobile view */}
+        <button onClick={handleMenuClick} className="menu-icon">
+          <img
+            src="https://img2.pic.in.th/pic/menu23afabfaab45e5af.png"
+            alt="Menu Icon"
+            className="navbar-icon"
+          />
+        </button>
       </div>
-        <img src="https://img2.pic.in.th/pic/slideme-logo.png" alt="Slide Me Logo" className="navbar-logo" />
+      <div className="navbar-logo">
+        <img
+          src="https://img2.pic.in.th/pic/slideme-logo.png"
+          alt="logo"
+          className="navbar-logo"
+          style={{ width: "45px", height: "45px" }}
+        />
+      </div>
       <div className="navbar-right">
-        <button className="notification-icon">🔔</button> {/* Notification icon */}
+        <button onClick={handleNotificationClick} className="notification-icon">
+          <img
+            src="https://img5.pic.in.th/file/secure-sv1/bell15b895250f52cd70.png"
+            alt="Notification Icon"
+            className="navbar-icon"
+          />
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
