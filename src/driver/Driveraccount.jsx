@@ -1,8 +1,14 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Driveraccount.css";
+import { useNavigate } from "react-router-dom";
 
 function Driveraccount() {
+  const navigate = useNavigate();
+
+  const handletodrivinglicense = () => {
+    navigate("/driving-license");
+  }
   return (
     <div className="Driveraccount-container">
       <div className="Driveraccount-header">
@@ -42,7 +48,7 @@ function Driveraccount() {
           <Form.Check type="checkbox" label="ฉันยอมรับเงื่อนไขและข้อตกลง" />
         </Form.Group>
 
-        <Button variant="success" type="submit">
+        <Button variant="success" type="submit" onClick={handletodrivinglicense}>
           ดำเนินการต่อ
         </Button>
       </Form>

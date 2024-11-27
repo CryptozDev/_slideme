@@ -1,6 +1,12 @@
 import "./Drivinglicense.css";
+import { useNavigate } from "react-router-dom";
 
 function Drivinglicense() {
+  const navigate = useNavigate();
+
+  const handletootppage = () => {
+    navigate("/otp-driver");
+  }
   return (
     <div className="drivinglicense-container">
       {/* Header */}
@@ -30,7 +36,7 @@ function Drivinglicense() {
         </div>
 
         {/* Button ดำเนินการต่อ */}
-        <button className="continue-button">ดำเนินการต่อ</button>
+        <button className="continue-button" onClick={handletootppage}>ดำเนินการต่อ</button>
       </div>
     </div>
   );

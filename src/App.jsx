@@ -112,6 +112,7 @@ function App() {
             <Route path="/driver" element={<SplashScreenDriver />} />
             <Route path="/login-driver" element={<LoginDriver />} />
             <Route path="/register-driver" element={<RegisterDriver />} />
+            
             <Route path="/account-driver" element={<Driveraccount />} />
             <Route path="/driving-license" element={<Drivinglicense />} />
             <Route path="/otp-driver" element={<OTPDriver />} />
