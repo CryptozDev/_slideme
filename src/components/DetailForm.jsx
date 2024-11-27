@@ -29,7 +29,7 @@ const DetailForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="formmy-container">
       <h2>สมัครสมาชิก</h2>
       <p>มีบัญชีอยู่แล้ว? <Link to="/login">เข้าสู่ระบบ</Link></p>
       <form onSubmit={handleSubmit} className="detail-form">
@@ -41,7 +41,7 @@ const DetailForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="custom-input"
+            className="cuuussstommm-input"
           />
         </label>
         <label>
@@ -52,7 +52,7 @@ const DetailForm = () => {
             value={formData.surname}
             onChange={handleChange}
             required
-            className="custom-input"
+            className="cuuussstommm-input"
           />
         </label>
         <label>
@@ -63,13 +63,13 @@ const DetailForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="custom-input"
+            className="cuuussstommm-input"
           />
         </label>
-        <label className="checkbox-label">
-          <div className="checkbox-container">
+        <label className="checkkkkyyy-label">
+          <div className="checkkkkyyy-container">
             <input
-              type="checkbox"
+              type="checkkkkyyy"
               name="agreeTerms"
               checked={formData.agreeTerms}
               onChange={handleChange}

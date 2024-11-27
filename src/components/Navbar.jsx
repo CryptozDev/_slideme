@@ -29,6 +29,7 @@ const Navbar = () => {
             src="https://img2.pic.in.th/pic/slideme-logo.png"
             alt="logo"
             className="navbar-logo"
+            style={{ width: "45px", height: "45px" }}
           />
       </div>
       <div className="navbar-right">

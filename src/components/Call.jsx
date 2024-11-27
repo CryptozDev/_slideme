@@ -37,8 +37,8 @@ function Call() {
   };
 
   return (
-    <div className="call-container">
-      <div className="call-img">
+    <div className="calltummai-containner">
+      <div className="calltummai-img">
         <img
           className="profile-call"
           src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"

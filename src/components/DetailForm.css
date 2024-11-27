@@ -1,4 +1,4 @@
-.form-container { 
+.formmy-container { 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,7 @@
     flex-direction: column;
   }
     
-  .custom-input {
+  .cuuussstommm-input {
     border: none;
     border-bottom: 2px solid #000;
     border-radius: 0;
@@ -56,7 +56,7 @@
     transition: border 0.3s ease;
   }
     
-  .checkbox-label {
+  .checkkkkyyy-label {
     margin-top: 11px;
     font-size: 11px;
     color: #666;
@@ -66,17 +66,17 @@
     white-space: nowrap; /* Prevent text from wrapping */
   }
     
-  .checkbox-label input[type="checkbox"] {
+  .checkkkkyyy-label input[type="checkbox"] {
     margin-right: 8px;
     accent-color: #28a745;
   }
     
-  .checkbox-label a {
+  .checkkkkyyy-label a {
     color: inherit;
     text-decoration: underline;
   }
     
-  .checkbox-label a:hover {
+  .checkkkkyyy-label a:hover {
     text-decoration: none;
   }  
     

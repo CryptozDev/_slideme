@@ -38,28 +38,28 @@ function Calldriver() {
   };
 
   return (
-    <div className="call-screen-container">
-      <div className="call-screen-wrapper">
-        <div className="call-screen-profile">
+    <div className="calllaaass-screen-container">
+      <div className="calllaaass-screen-wrapper">
+        <div className="calllaaass-screen-profile">
           <img
-            className="call-screen-profile-pic"
+            className="calllaaass-screen-profile-pic"
             src="https://img5.pic.in.th/file/secure-sv1/image7f574ac69994f753.png"
             alt="โปรไฟล์"
           />
-          <div className="call-screen-name">
+          <div className="calllaaass-screen-name">
             <p>น้องแดน</p>
           </div>
-          <div className="call-screen-connection-status">
+          <div className="calllaaass-screen-connection-status">
             <h5>กำลังเชื่อมต่อ...</h5>
           </div>
         </div>
 
-        <div className="call-screen-buttons">
+        <div className="calllaaass-screen-buttons">
           <div>
             <button onClick={toggleMic}>
               <i className={`bi ${micOn ? "bi-mic" : "bi-mic-mute"}`}></i>
             </button>
-            <p className="call-screen-button-label">
+            <p className="calllaaass-screen-button-label">
               {micOn ? "เปิดไมค์" : "ปิดไมค์"}
             </p>
           </div>
@@ -72,7 +72,7 @@ function Calldriver() {
                 }`}
               ></i>
             </button>
-            <p className="call-screen-button-label">
+            <p className="calllaaass-screen-button-label">
               {cameraOn ? "ปิดกล้อง" : "เปิดกล้อง"}
             </p>
           </div>
@@ -83,17 +83,17 @@ function Calldriver() {
                 className={`bi ${speakerOn ? "bi-volume-mute" : "bi-volume-up"}`}
               ></i>
             </button>
-            <p className="call-screen-button-label">
+            <p className="calllaaass-screen-button-label">
               {speakerOn ? "ปิดลำโพง" : "เปิดลำโพง"}
             </p>
           </div>
         </div>
 
-        <div className="call-screen-end-button">
+        <div className="calllaaass-screen-end-button">
           <button onClick={handleBackClick}>
             <i className="bi bi-x-lg"></i>
           </button>
-          <p className="call-screen-button-label">วางสาย</p>
+          <p className="calllaaass-screen-button-label">วางสาย</p>
         </div>
       </div>
     </div>
