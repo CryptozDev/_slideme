@@ -70,6 +70,7 @@ import Informationapp from "./Accountinfo/Informationapp";
 import Driverhistory from "./HistoryDriver/Driverhistory";
 import Prodriver from "./Prodriver/Prodriver"; 
 import SlideMeForm from "./SlideMeForm/SlideMeForm";
+import DetailDriverForm from "./DetailDriver/Detaildriver";
 
 
 
@@ -134,6 +135,7 @@ function App() {
 
 
             {/* Khing */}
+            <Route path="/detail-driverform" element={<DetailDriverForm />} /> 
             <Route path="/report" element={<Report />} />
             <Route path="/section" element={<SectionPage />} />
             <Route path="/payment-details" element={<PaymentDetails />} />

@@ -5,7 +5,6 @@ import { GiPositionMarker } from "react-icons/gi";
 import { PiMapPinArea } from "react-icons/pi";
 import { MdOutlinePriceChange } from "react-icons/md";
 import { PiCalendarBlankLight } from "react-icons/pi";
-import { IoChevronDown } from "react-icons/io5";
 
 function HistoryPage() {
   const navigate = useNavigate();
@@ -52,7 +51,6 @@ function HistoryPage() {
 
   return (
     <div className="history-container">
-      {/* ปุ่มย้อนกลับ */}
       <button onClick={handleBack} className="back-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -66,28 +64,12 @@ function HistoryPage() {
           <path d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
         </svg>
       </button>
-  
 
       <h2>ประวัติการใช้บริการ</h2>
-  
-      <section className="date-filter">
-  <div className="select-container" style={{ position: "relative" }}>
-    <select className="" style={{ paddingRight: "30px" }}>
-      <option value="Nov 29, 2024">Nov 29, 2024</option>
-      <option value="Nov 28, 2024">Nov 28, 2024</option>
-      <option value="Nov 27, 2024">Nov 27, 2024</option>
-    </select>
-    <IoChevronDown
-      style={{
-        position: "absolute",
-        right: "10px",
-        top: "50%",
-        transform: "translateY(-50%)",
-        color: "#2EA366",
-      }}
-    />
-  </div>
-</section>
+
+      <select className="calendar-container">
+        <option>Nov 29, 2024</option>
+      </select>
 
       <div className="history-list">
         {historyData.map((item, index) => (
@@ -96,7 +78,7 @@ function HistoryPage() {
               <PiMapPinArea style={{ color: "#2EA366", marginRight: "8px" }} />
               จุดเริ่มต้น: {item.location}
             </p>
-  
+
             <p>
               <GiPositionMarker
                 style={{
@@ -108,7 +90,7 @@ function HistoryPage() {
               />
               จุดปลายทาง: {item.area}
             </p>
-  
+
             <p>
               <PiCalendarBlankLight
                 style={{
@@ -122,7 +104,7 @@ function HistoryPage() {
                 วันที่: {item.date}
               </span>
             </p>
-  
+
             <div className="pricetag-container">
               <p className="price">
                 <MdOutlinePriceChange
@@ -130,13 +112,13 @@ function HistoryPage() {
                     color: "#2EA366",
                     marginRight: "5px",
                     position: "relative",
-                    top: "4px",
+                    top: "2px",
                   }}
                 />
                 {item.price}
               </p>
             </div>
-  
+
             <div className="status-container">
               <button className={`status-btn ${item.status.toLowerCase()}`}>
                 {item.status}
@@ -149,9 +131,9 @@ function HistoryPage() {
                 className="bi bi-arrow-right-square"
                 viewBox="0 0 16 16"
                 style={{
-                  marginLeft: "300px",
+                  marginLeft: "5px",
                   position: "relative",
-                  top: "-62px",
+                  top: "-32px",
                 }}
               >
                 <path
@@ -165,7 +147,6 @@ function HistoryPage() {
       </div>
     </div>
   );
-  
 }
 
 export default HistoryPage;

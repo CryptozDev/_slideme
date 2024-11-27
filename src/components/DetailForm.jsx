@@ -69,7 +69,7 @@ const DetailForm = () => {
         <label className="checkkkkyyy-label">
           <div className="checkkkkyyy-container">
             <input
-              type="checkkkkyyy"
+              type="checkbox"
               name="agreeTerms"
               checked={formData.agreeTerms}
               onChange={handleChange}
@@ -78,7 +78,7 @@ const DetailForm = () => {
             ยอมรับ <a href="/terms">เงื่อนไขการใช้งาน</a> และ <a href="/policy">นโยบายความเป็นส่วนตัว</a>
           </div>
         </label>
-        <button type="submit" className="submit-button">สมัครสมาชิก</button>
+        <button type="submit" className="suubbbmt">สมัครสมาชิก</button>
       </form>
     </div>
   );

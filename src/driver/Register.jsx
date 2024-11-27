@@ -12,7 +12,7 @@ function Register() {
     console.log('Registering with phone:', phone);
 
     // Navigate to /detailform after clicking the button
-    navigate('/account-driver');
+    navigate('/detail-driverform');
   };
 
   return (

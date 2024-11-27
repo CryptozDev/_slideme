@@ -3,7 +3,6 @@
   padding: 20px;
   padding-bottom: 50px; 
   align-items: center;
-  width: 1500px;
 }
 
 select {
@@ -18,7 +17,6 @@ select {
   font-size: 30px;
   margin-bottom: 20px;
   text-align: center;
-  margin-top: 30px;
 }
 
 .history-container select {
@@ -29,11 +27,29 @@ select {
   margin-bottom: 20px;
 }
 
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .history-item .price-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5px; 
+}
+
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 202px;
 }
 
 .history-item p {
@@ -50,6 +66,7 @@ select {
   font-weight: bold;
   cursor: default;
 }
+
 
 .status-btn.confirm {
   color: #007bff; 
@@ -95,6 +112,7 @@ select {
   margin-bottom: 15px;
 }
 
+
 .price::before {
   position: absolute;
   left: 0;
@@ -105,6 +123,13 @@ select {
   z-index: 1; 
   margin-top: 20px;
   margin-bottom: 100px;
+}
+
+
+.calendar-container {
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 10px;
 }
 
 .history-title {
@@ -119,6 +144,13 @@ select {
   padding: 0; 
   cursor: pointer; 
   color: #f0f0f0;
+}
+
+.history-container {
+  background: linear-gradient(to bottom, #2EA366 20%, #e4e0e0 80%);
+  padding: 20px;
+  padding-bottom: 50px; 
+  align-items: center;
 }
 
 select {
@@ -185,6 +217,8 @@ select {
   top: -35px; 
 }
 
+
+
 .price {
   position: relative; 
   top: -20px; 
@@ -205,6 +239,7 @@ select {
 }
 
 
+
 .pricetag-container {
   margin-bottom: 15px;
 }
@@ -218,6 +253,13 @@ select {
   height: 1px; 
   background-color: #848884; 
   z-index: 1; 
+}
+
+
+.calendar-container {
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 10px;
 }
 
 .history-title {
@@ -248,35 +290,3 @@ select {
 .history-item p {
   margin-bottom: 10px; 
 }
-.date-filter {
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; 
-  }
-  
-  .date-filter select {
-    padding: 8px 12px 8px 36px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: #333;
-    
-    appearance: none;
-  }
-  
-  .date-filter select option {
-    text-align: left;
-  }
-  
-  .date-filter .dropdown-need {
-    position: absolute;
-    left: 225px; 
-    top: 50%;
-    transform: translateY(-50%);
-    color: #333;
-    pointer-events: none;
-  }
-  

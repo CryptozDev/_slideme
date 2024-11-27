@@ -77,14 +77,12 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
-    width: "500vh",
     backgroundColor: "#f8f9fa",
   },
   title: {
-    color: "#28a745",
+    color: "#2ea366",
     fontSize: "1.5rem",
     fontWeight: "bold",
-    marginTop: "130px",
     GrTextAlignCenter
   },
   subtitle: {
@@ -98,7 +96,7 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     width: "85%",
-    maxWidth: "350px",
+    maxWidth: "450px",
     marginLeft: "-10px",
   },
   inputGroup: {
@@ -127,7 +125,7 @@ const styles = {
     padding: "0",
   },
   button: {
-    backgroundColor: "#28a745",
+    backgroundColor: "#2ea366",
     color: "#fff",
     padding: "0.75rem",
     fontSize: "1rem",

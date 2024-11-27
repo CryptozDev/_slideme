@@ -5,7 +5,6 @@ import { GiPositionMarker } from "react-icons/gi";
 import { PiMapPinArea } from "react-icons/pi";
 import { MdOutlinePriceChange } from "react-icons/md";
 import { PiCalendarBlankLight } from "react-icons/pi";
-import { IoChevronDown } from "react-icons/io5";
 
 function Driverhistory() {
   const navigate = useNavigate();
@@ -68,24 +67,9 @@ function Driverhistory() {
 
       <h2>ประวัติการให้บริการ</h2>
 
-      <section className="date-filter">
-  <div className="select-container" style={{ position: "relative" }}>
-    <select className="" style={{ paddingRight: "30px" }}>
-      <option value="Nov 29, 2024">Nov 29, 2024</option>
-      <option value="Nov 28, 2024">Nov 28, 2024</option>
-      <option value="Nov 27, 2024">Nov 27, 2024</option>
-    </select>
-    <IoChevronDown
-      style={{
-        position: "absolute",
-        right: "10px",
-        top: "50%",
-        transform: "translateY(-50%)",
-        color: "#2EA366",
-      }}
-    />
-  </div>
-</section>
+      <select className="calendar-container">
+        <option>Nov 29, 2024</option>
+      </select>
 
       <div className="history-list">
         {historyData.map((item, index) => (

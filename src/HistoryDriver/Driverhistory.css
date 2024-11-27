@@ -39,7 +39,18 @@
     align-items: center;
     margin-top: 5px; 
   }
-
+  
+  
+  .history-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 202px;
+  }
   
   .history-item p {
     margin: 5px 0;
@@ -94,7 +105,11 @@
   }
   
   
-
+  .calendar-container {
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
   
   .history-title {
     background-color: #f0f0f0; 
@@ -162,9 +177,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 220px; 
     gap: 5px; 
-    margin-left: 550px;
-    width: 100%;
-    width: 360px;
+    margin-left: -5px;
   }
   
   
@@ -188,20 +201,20 @@
   .status-btn.confirm {
     color: #007bff;
     margin-left: 190px;
-    top: -36px; 
+    top: -35px; 
     margin-right: 2px;
   }
 
   .status-btn.completed {
     color: #28a745;
     margin-left: 180px;
-    top: -40px; 
+    top: -37px; 
   }
   
   .status-btn.cancelled {
     color: #dc3545;
     margin-left: 180px;
-    top: -38px; 
+    top: -35px; 
     margin-right: 2px;
   }
   
@@ -245,23 +258,12 @@
     z-index: 1; 
   }
   
-  .calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 150px;
-    font-family: 'Arial', sans-serif;
-  }
   
-
+  .calendar-container {
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
   
   .history-title {
     background-color: #f0f0f0; 
