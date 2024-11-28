@@ -47,7 +47,9 @@ function HistoryPage() {
     },
   ];
 
-  const handleBack = () => navigate(-1);
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="history-container">
@@ -66,81 +68,37 @@ function HistoryPage() {
       </button>
 
       <h2>ประวัติการใช้บริการ</h2>
-
+      <div className="calendarrrrrrrrr-container">
       <select className="calendar-container">
         <option>Nov 29, 2024</option>
       </select>
+      </div>
 
       <div className="history-list">
         {historyData.map((item, index) => (
           <div key={index} className="history-item">
             <p>
-              <PiMapPinArea style={{ color: "#2EA366", marginRight: "8px" }} />
+              <PiMapPinArea className="icon" />
               จุดเริ่มต้น: {item.location}
             </p>
-
             <p>
-              <GiPositionMarker
-                style={{
-                  color: "#000000",
-                  marginRight: "8px",
-                  marginTop: "2px",
-                  marginBottom: "2px",
-                }}
-              />
+              <GiPositionMarker className="icon" />
               จุดปลายทาง: {item.area}
             </p>
-
             <p>
-              <PiCalendarBlankLight
-                style={{
-                  color: "#000000",
-                  marginRight: "8px",
-                  marginTop: "25px",
-                  marginBottom: "-1px",
-                }}
-              />
-              <span style={{ marginTop: "20px", display: "inline-block" }}>
-                วันที่: {item.date}
-              </span>
+              <PiCalendarBlankLight className="icon" />
+              วันที่: {item.date}
             </p>
-
-            <div className="pricetag-container">
-              <p className="price">
-                <MdOutlinePriceChange
-                  style={{
-                    color: "#2EA366",
-                    marginRight: "5px",
-                    position: "relative",
-                    top: "2px",
-                  }}
-                />
+            <div className="money-container">
+              <p className="money">
+                <MdOutlinePriceChange className="icon" />
                 {item.price}
               </p>
             </div>
-
             <div className="status-container">
-              <button className={`status-btn ${item.status.toLowerCase()}`}>
+              <button className={`status-btn ${item.status.toLowerCase().replace(" ", "-")}`}>
                 {item.status}
               </button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-right-square"
-                viewBox="0 0 16 16"
-                style={{
-                  marginLeft: "5px",
-                  position: "relative",
-                  top: "-32px",
-                }}
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
-                />
-              </svg>
             </div>
           </div>
         ))}

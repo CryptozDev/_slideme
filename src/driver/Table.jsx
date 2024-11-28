@@ -1,10 +1,16 @@
 import "./Table.css";
+import { useNavigate } from "react-router-dom";
 
 function Table() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  }
   return (
     <div className="table-container">
       <div>
-        <button className="table-back-btn bi bi-arrow-left"></button>
+        <button className="table-back-btn bi bi-arrow-left" onClick={handleGoBack}></button>
       </div>
       <div className="table">
         <h1>รายละเอียดราคา</h1>

@@ -1,295 +1,116 @@
-.history-container {
-    background: linear-gradient(to bottom, #2EA366 20%, #e4e0e0 80%);
-    padding: 20px;
-    padding-bottom: 50px; 
-    align-items: center;
-  }
-  
-  select {
-    margin: 20px 0; 
-    padding: 10px;
-    font-size: 16px;
-    text-align: center; 
-  }
-  
-  .history-container h2 {
-    color: #f1f7f2;
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .history-container select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .history-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .history-item .price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px; 
-  }
-  
-  
-  .history-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 202px;
-  }
-  
-  .history-item p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .status-btn {
-    padding: 5px 10px;
-    border: none;
-    background: none; 
-    box-shadow: none; 
-    font-weight: bold;
-    cursor: default;
-  }
-  
- 
-  
-  .history-item p.price {
-    margin-top: 5px; 
-  }
-  
-  .price-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-top: 5px; 
-  }
-  
-  .price {
-    position: relative;
-    transform: translateY(-25px); 
-    margin-top: 50px;
-  }
-  
-  
-  .pricetag-container {
-    margin-bottom: 15px;
-  }
-  
-  
-  .price::before {
-    position: absolute;
-    left: 0;
-    top: 100px; 
-    width: 100%; 
-    height: 1px; 
-    background-color: #848884; 
-    z-index: 1; 
-    margin-top: 20px;
-    margin-bottom: 100px;
-  }
-  
-  
-  .calendar-container {
-    text-align: center;
-    margin-left: 100px;
-    margin-top: 10px;
-  }
-  
-  .history-title {
-    background-color: #f0f0f0; 
-    padding: 10px; 
-    border-radius: 5px; 
-  }
-  
-  .back-button {
-    background: none;
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
-    color: #f0f0f0;
-  }
-  
-  .history-container {
-    background: linear-gradient(to bottom, #2EA366 20%, #e4e0e0 80%);
-    padding: 20px;
-    padding-bottom: 50px; 
-    align-items: center;
-  }
-  
-  select {
-    margin: 20px 0; 
-    padding: 10px;
-    font-size: 16px;
-    text-align: center; 
-  }
-  
-  .history-container h2 {
-    color: #f1f7f2;
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .history-container select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .history-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .history-item .price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px; 
-  }
-  
-  .history-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 220px; 
-    gap: 5px; 
-    margin-left: -5px;
-  }
-  
-  
-  .history-item p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .status-btn {
-    padding: 5px 10px;
-    border: none;
-    background: none;
-    font-weight: bold;
-    cursor: default;
-    position: relative; 
-    top: -35px; 
-  }
-  
-  
-  .status-btn.confirm {
-    color: #007bff;
-    margin-left: 190px;
-    top: -35px; 
-    margin-right: 2px;
-  }
+/* General Container */
+.history1-container {
+  background: linear-gradient(to bottom, #2EA366 20%, #e4e0e0 80%);
+  padding: 20px;
+  padding-bottom: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
-  .status-btn.completed {
-    color: #28a745;
-    margin-left: 180px;
-    top: -37px; 
-  }
-  
-  .status-btn.cancelled {
-    color: #dc3545;
-    margin-left: 180px;
-    top: -35px; 
-    margin-right: 2px;
-  }
-  
-  .price {
-    position: relative; 
-    top: -20px; 
-    margin-top: 0; 
-    
-  }
-  
-  
-  .history-item p.price {
-    margin-top: 5px; 
-  }
-  
-  .price-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-top: 5px; 
-  }
-  
-  .price {
-    position: relative;
-    top: 40px; 
-    margin-top: 550px;
-  }
-  
-  .pricetag-container {
-    margin-bottom: 15px;
-  }
-  
-  .price::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -40px; 
-    width: 100%; 
-    height: 1px; 
-    background-color: #848884; 
-    z-index: 1; 
-  }
-  
-  
-  .calendar-container {
-    text-align: center;
-    margin-left: 100px;
-    margin-top: 10px;
-  }
-  
-  .history-title {
-    background-color: #f0f0f0; 
-    padding: 10px; 
-    border-radius: 5px; 
-  }
-  
-  .back-button {
-    background: none;
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
-    color: #f0f0f0;
-  }
-  
-  .date-container {
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-    margin-top: 50px; 
-  }
-  
-  .date-container svg {
-    flex-shrink: 0; 
-  }
-  
-  .history-item p {
-    margin-bottom: 10px; 
-  }
+h2 {
+  color: #f1f7f2;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.calendarrrrrrrrr-container{
+ margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* List of History */
+.history1-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.history1-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history1-item p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.money1-container {
+  margin-top: 10 px;
+  margin-bottom: 15px;
+}
+
+.money1 {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.money1 .icon {
+  color: #2ea366;
+  margin-right: 5px;
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  margin-top: -1.5rem;
+  margin-left: 170px;
+}
+
+.status-btn {
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: default;
+  white-space: nowrap;
+  margin-top: 10px; /* Prevent text from breaking into multiple lines */
+}
+
+.status-btn.order-confirm {
+  color: #007bff;
+}
+
+.status-btn.order-completed {
+  color: #28a745;
+}
+
+.status-btn.order-cancelled {
+  color: #dc3545;
+}
+
+/* Back Button */
+.back-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #f0f0f0;
+}

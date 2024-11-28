@@ -31,9 +31,11 @@
 }
 
 .driver-user-info h2 {
-  margin: 0;
+  display: flex;
+  justify-content: flex-start;
   font-size: 1.2em;
   font-weight: bold;
+
 }
 
 .driver-user-info span {

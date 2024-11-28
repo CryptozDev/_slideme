@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 import Navbar from "./Navbar";
 import MapView from "./MapView";
 import "./Bidding.css";
@@ -31,7 +31,7 @@ const Bidding = () => {
         <p className="bidding-subtext">คุณควรเสนอราคาตามความเหมาะสม</p>
         <p className="bidding-subtext">
           หรือยึดอัตราที่แนะนำได้{" "}
-          <span className="suggested-rate">คลิกเลย</span>
+          <Link to={"/pricetable"}><span className="suggested-rate">คลิกเลย</span></Link>
         </p>
         <div className="bidding-input-container">
           <input
