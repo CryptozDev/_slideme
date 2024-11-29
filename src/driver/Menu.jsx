@@ -1,12 +1,9 @@
-
-import "./Menu.css";
 import { Link } from "react-router-dom";
 import DriverBottomNavBar from "./DriverBottomNavBar";
 
 function Menu() {
   return (
     <div className="menu1-container">
-      {/* <Navbar /> */}
       <div className="menu-profile-section">
         <div className="menu-profile-icon">
           <img
@@ -16,7 +13,7 @@ function Menu() {
         </div>
         <div className="menu-profile-info">
           <div className="menu-profile-name">นายสมชาย </div>
-          <div className="menu-profile-status">Silver Member</div>
+          <div className="menu-profile-status">Gold Member</div>
         </div>
         <span className="menu-arrow">›</span>
       </div>
@@ -27,9 +24,9 @@ function Menu() {
           </div>
         </Link>
         <Link to={"/pricetable"} style={{ textDecoration: "none" }}>
-        <div className="menu-item">
-          ค่าจัดส่ง<span className="menu-arrow">›</span>
-        </div>
+          <div className="menu-item">
+            ค่าจัดส่ง<span className="menu-arrow">›</span>
+          </div>
         </Link>
         <div className="menu-item">
           ภาษา<span className="menu-arrow">›</span>
