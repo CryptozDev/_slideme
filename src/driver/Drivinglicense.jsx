@@ -5,7 +5,7 @@ function Drivinglicense() {
   const navigate = useNavigate();
 
   const handletootppage = () => {
-    navigate("/otp-driver");
+    navigate("/slideMeForm");
   }
   return (
     <div className="drivinglicense-container">

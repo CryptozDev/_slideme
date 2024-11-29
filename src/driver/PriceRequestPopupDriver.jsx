@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./PriceRequestPopup.css";
+import "./PriceRequestPopupDriver.css";
 
 const PriceRequestPopup = ({ onClose }) => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import DriverBottomNavBar from './DriverBottomNavBar';
 import MapView from './MapView';
-import WaitingPopup from './PriceRequestPopup';
+import WaitingPopup from './PriceRequestPopupDriver';
 import './Waiting.css';
 
 const Waiting = () => {

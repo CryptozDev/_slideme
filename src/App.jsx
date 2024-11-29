@@ -72,6 +72,9 @@ import Prodriver from "./Prodriver/Prodriver";
 import SlideMeForm from "./SlideMeForm/SlideMeForm";
 import DetailDriverForm from "./DetailDriver/Detaildriver";
 
+import LogicChatdriver from './driver/ChatDriver';
+import LogicChatcustomer from './components/ChatCustomer';
+
 
 
 function App() {
@@ -149,6 +152,9 @@ function App() {
             <Route path="/driverhis" element={<Driverhistory />} />
             <Route path="/prodriver" element={<Prodriver />} /> 
             <Route path="/slideMeForm" element={<SlideMeForm />} /> 
+
+            <Route path="/logicchat-driver" element={<LogicChatdriver />} />
+            <Route path="/logicchat-customer" element={<LogicChatcustomer />} />
 
 
             {/* <Route path="*" element={<Navigate to="/" replace />} /> */}

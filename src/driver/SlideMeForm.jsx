@@ -1,7 +1,12 @@
 import React from "react";
 import { GrTextAlignCenter } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 function SlideMeForm() {
+  const navigate = useNavigate();
+  const handletoOTPeieieiei = () => {
+    navigate("/otp-driver");
+  };
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>กรอกข้อมูลรถสไลด์</h1>
@@ -26,29 +31,39 @@ function SlideMeForm() {
             <DotIcon />
             <label>ทะเบียน</label>
           </div>
-          <input type="text" placeholder="1กม 1234 กรุงเทพ" style={styles.input} />
+          <input
+            type="text"
+            placeholder="1กม 1234 กรุงเทพ"
+            style={styles.input}
+          />
         </div>
         <div style={styles.inputGroup}>
           <div style={styles.labelWithIcon}>
             <DotIcon />
             <label>VIN</label>
           </div>
-          <input type="text" placeholder="1HGCM82633A123456" style={styles.input} />
+          <input
+            type="text"
+            placeholder="1HGCM82633A123456"
+            style={styles.input}
+          />
         </div>
         <div style={styles.inputGroup}>
-  <div style={styles.labelWithIcon}>
-    <DotIcon />
-    <label>ถ่ายรูปรถของคุณ</label>
-  </div>
-  <input 
-    type="file" 
-    accept="image/*" 
-    capture="environment" 
-    style={styles.inputFile} 
-  />
-</div>
+          <div style={styles.labelWithIcon}>
+            <DotIcon />
+            <label>ถ่ายรูปรถของคุณ</label>
+          </div>
+          <input
+            type="file"
+            accept="image/*"
+            capture="environment"
+            style={styles.inputFile}
+          />
+        </div>
 
-        <button style={styles.button}>ดำเนินการต่อ</button>
+        <button style={styles.button} onClick={handletoOTPeieieiei}>
+          ดำเนินการต่อ
+        </button>
       </div>
     </div>
   );
@@ -81,11 +96,11 @@ const styles = {
     backgroundColor: "#f8f9fa",
   },
   title: {
-    color: "#28a745",
+    color: "#2ea366",
     fontSize: "1.5rem",
     fontWeight: "bold",
     marginTop: "130px",
-    GrTextAlignCenter
+    GrTextAlignCenter,
   },
   subtitle: {
     color: "#6c757d",
@@ -109,7 +124,7 @@ const styles = {
   labelWithIcon: {
     display: "flex",
     alignItems: "center",
-    gap: "0.5rem", 
+    gap: "0.5rem",
   },
   input: {
     marginTop: "0.5rem",
@@ -127,7 +142,7 @@ const styles = {
     padding: "0",
   },
   button: {
-    backgroundColor: "#28a745",
+    backgroundColor: "#2ea366",
     color: "#fff",
     padding: "0.75rem",
     fontSize: "1rem",
