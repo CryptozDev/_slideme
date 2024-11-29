@@ -1,11 +1,16 @@
 import "./Datadriver.css";
+import { useNavigate } from "react-router-dom";
 
 function Datadriver() {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  }
   return (
     <div className="datadriver-container">
       {/* ส่วนหัว */}
       <div className="datadriver-header">
-        <button className="datadriver-back-btn bi bi-arrow-left"></button>
+        <button className="datadriver-back-btn bi bi-arrow-left" onClick={handleGoBack}></button>
         <h2>ข้อมูลผู้ขับ</h2>
       </div>
 

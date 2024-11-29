@@ -4,7 +4,7 @@ import './Prodriver.css';
 import humanImage from './human.copy.jpg';
 
 const Profile = () => {
-  const initialUserInfo = {
+  const initialDriverInfo = {
     name: 'สมพร ดูดีมีชัย', 
     username: 'sompon.candrive', 
     phone: '+987654321',
@@ -14,7 +14,7 @@ const Profile = () => {
     image: humanImage,
   };
 
-  const [userInfo, setUserInfo] = useState(initialUserInfo);
+  const [userInfo, setUserInfo] = useState(initialDriverInfo);
   const [isChanged, setIsChanged] = useState(false);
 
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    setIsChanged(JSON.stringify(userInfo) !== JSON.stringify(initialUserInfo));
+    setIsChanged(JSON.stringify(userInfo) !== JSON.stringify(initialDriverInfo));
   }, [userInfo]);
 
   return (
