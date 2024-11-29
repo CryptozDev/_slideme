@@ -8,6 +8,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.user-info h2 {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .header {
   display: flex;
   align-items: center;

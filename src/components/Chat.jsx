@@ -16,7 +16,7 @@ const navigate = useNavigate();
           alt="User"
         />
         <div className="user-info">
-          <h2>น้องแดน</h2>
+          <h2>สมชาย</h2>
           <span>วันนี้ 5:00 PM</span>
         </div>
         <button className="bi bi-telephone"></button>

@@ -16,7 +16,7 @@ const Driverchat = () => {
           alt="User"
         />
         <div className="driver-user-info">
-          <h2>คุณลูกค้า</h2>
+          <h2>น้องแดน</h2>
           <span>วันนี้ 5:00 PM</span>
         </div>
         <button className="call-btn bi bi-telephone"></button>

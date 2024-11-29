@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './profile.css';
-import humanImage from './human.jpg';
 
 const Profile = () => {
   const initialUserInfo = {
-    name: 'สมชาย ใจดี', 
-    username: 'somchai.inbkk', 
-    phone: '+123456789',
-    email: 'somchai.jai@example.com',
-    age: '23',
-    image: humanImage,
+    name: 'เด็กชายแดน มองทำไม', 
+    username: 'dannypipo', 
+    phone: '+987654321',
+    email: 'dan.pipo@example.com',
+    age: '15',
+    image: "https://img5.pic.in.th/file/secure-sv1/image7f574ac69994f753.png",
   };
 
   const [userInfo, setUserInfo] = useState(initialUserInfo);

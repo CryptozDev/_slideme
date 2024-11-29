@@ -24,9 +24,9 @@ function Menu() {
             การแจ้งเตือน<span className="menu-arrow">›</span>
           </div>
         </Link>
-        <div className="menu-item">
+        <Link to={"/pricetable"} style={{ textDecoration: "none" }}><div className="menu-item">
           ค่าจัดส่ง<span className="menu-arrow">›</span>
-        </div>
+        </div></Link>
         <div className="menu-item">
           ภาษา<span className="menu-arrow">›</span>
         </div>

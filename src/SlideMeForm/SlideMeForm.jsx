@@ -1,7 +1,13 @@
 import React from "react";
 import { GrTextAlignCenter } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";  
 
 function SlideMeForm() {
+  const navigate = useNavigate();  
+
+  const gotootppppp = () => {
+    navigate("/otp-driver");  
+  };
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>กรอกข้อมูลรถสไลด์</h1>
@@ -48,7 +54,7 @@ function SlideMeForm() {
   />
 </div>
 
-        <button style={styles.button}>ดำเนินการต่อ</button>
+        <button style={styles.button} onClick={gotootppppp}>ดำเนินการต่อ</button>
       </div>
     </div>
   );

@@ -43,6 +43,15 @@
   text-align: left;
 }
 
+.dtdriverrrr {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  text-align: left;
+}
+
 .driver-name {
   font-size: 18px;
   font-weight: bold;

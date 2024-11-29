@@ -31,7 +31,7 @@ const Drivertobiding = () => {
       <div className="infloww-card">
         <div className="driver-infloww">
             <img
-              src="https://img2.pic.in.th/pic/imagebb33cd674b98dae6.png"
+              src="https://img5.pic.in.th/file/secure-sv1/image7f574ac69994f753.png"
               alt="Driver"
               className="driver-image"
             />

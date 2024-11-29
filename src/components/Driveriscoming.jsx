@@ -37,7 +37,7 @@ const Driveriscoming = () => {
                 className="driver-image"
               />
             </Link>
-            <div className="driver-dt">
+            <div className="driver-dtzz">
               <h4>สมชาย</h4>
               <span className="rating">⭐ 4.9</span>
             </div>
