@@ -65,6 +65,10 @@
     margin-bottom: 20px;
     white-space: nowrap; /* Prevent text from wrapping */
   }
+
+  .checkkkkyyy-container {
+    margin-right: 50px;
+  }
     
   .checkkkkyyy-label input[type="checkbox"] {
     margin-right: 8px;
