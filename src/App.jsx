@@ -1,6 +1,6 @@
 // src/App.jsx
-import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Routes, Navigate, useLocation, Link } from 'react-router-dom';
+import React from 'react';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MapView from './components/MapView';
 import MapHome from './components/MapHome';
@@ -30,8 +30,7 @@ import ChatAdmin from './components/Chatadmin';
 import Star from './components/Form';
 import Tip from './components/Tip';
 import Notifications from './components/notifications';
-// import ChatCustomer from './components/ChatCustomer';
-import { ChatProvider } from './components/ChatContext';
+import { ChatProvider } from './components/ChatContext'; // ChatContext import
 
 import DriverBottomNavBar from './driver/DriverBottomNavBar';
 import SplashScreenDriver from './driver/SplashScreen';
@@ -53,7 +52,6 @@ import JobDetail from './driver/Jobdetail';
 import CheckDestination from './driver/CheckDestination';
 import CallDriver from './driver/CallDriver';
 import ChatDriver from './driver/DriverChat';
-// import ChatDriver from './driver/ChatDriver';
 import NotificationsDriver from './driver/Notificationsdriver';
 import Menu from './components/Menu';
 import MenuDriver from './driver/Menu';
@@ -75,109 +73,111 @@ import DetailDriverForm from "./DetailDriver/Detaildriver";
 import LogicChatdriver from './driver/ChatDriver';
 import LogicChatcustomer from './components/ChatCustomer';
 
+import AboutDeveloper from './About/AboutDeveloper';
 
+import { PhoneProvider } from './PhoneContext'; // PhoneContext import
 
 function App() {
-
   return (
-    <ChatProvider>
-      <Router>
-        <div className="app-container">
-          <Routes>
-            {/* เส้นทางของผู้ใช้ */}
-            <Route path="/" element={<SplashScreen />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/detailform" element={<DetailForm />} />
-            <Route path="/otp" element={<OTP />} />
-            <Route path="/createpass" element={<Createpass />} />
-            <Route path="/forgotpass" element={<Forgotpass />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/destination" element={<DestinationSelect />} />
-            <Route path="/confirmdestination" element={<ConfirmDestination />} />
-            <Route path="/choosetowtruck" element={<Towtruck />} />
-            <Route path="/pickupdetail" element={<PickupDetail />} />
-            <Route path="/waiting" element={<Waiting />} />
-            <Route path="/bidcom" element={<Biddingcompleted />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/qrpayment" element={<QrPayment />} />
-            <Route path="/waitpickup" element={<Waitpickup />} />
-            <Route path="/driveriscoming" element={<Driveriscoming />} />
-            <Route path="/data-driver" element={<Datadriver />} />
-            <Route path="/call" element={<Call />} />
-            <Route path="/star" element={<Star />} />
-            <Route path="/tip" element={<Tip />} />
-            <Route path="/chat-admin" element={<ChatAdmin />} />
-            <Route path="/chat-customer" element={<ChatCustomer />} />
-            <Route path="/menu" element={<Menu />} />
+    <PhoneProvider> {/* ห่อหุ้มแอปทั้งหมดด้วย PhoneProvider */}
+      <ChatProvider> {/* ห่อหุ้ม ChatProvider */}
+        <Router>
+          <div className="app-container">
+            <Routes>
+              {/* เส้นทางของผู้ใช้ */}
+              <Route path="/" element={<SplashScreen />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/detailform" element={<DetailForm />} />
+              <Route path="/otp" element={<OTP />} />
+              <Route path="/createpass" element={<Createpass />} />
+              <Route path="/forgotpass" element={<Forgotpass />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/destination" element={<DestinationSelect />} />
+              <Route path="/confirmdestination" element={<ConfirmDestination />} />
+              <Route path="/choosetowtruck" element={<Towtruck />} />
+              <Route path="/pickupdetail" element={<PickupDetail />} />
+              <Route path="/waiting" element={<Waiting />} />
+              <Route path="/bidcom" element={<Biddingcompleted />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/qrpayment" element={<QrPayment />} />
+              <Route path="/waitpickup" element={<Waitpickup />} />
+              <Route path="/driveriscoming" element={<Driveriscoming />} />
+              <Route path="/data-driver" element={<Datadriver />} />
+              <Route path="/call" element={<Call />} />
+              <Route path="/star" element={<Star />} />
+              <Route path="/tip" element={<Tip />} />
+              <Route path="/chat-admin" element={<ChatAdmin />} />
+              <Route path="/chat-customer" element={<ChatCustomer />} />
+              <Route path="/menu" element={<Menu />} />
 
-            {/* เส้นทางของคนขับ */}
-            <Route path="/driver" element={<SplashScreenDriver />} />
-            <Route path="/login-driver" element={<LoginDriver />} />
-            <Route path="/register-driver" element={<RegisterDriver />} />
-            
-            <Route path="/account-driver" element={<Driveraccount />} />
-            <Route path="/driving-license" element={<Drivinglicense />} />
-            <Route path="/otp-driver" element={<OTPDriver />} />
-            <Route path="/createpass-driver" element={<CreatepassDriver />} />
-            <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
-            <Route path="/notifications-driver" element={<NotificationsDriver />} />
-            <Route path="/receive-job" element={<ReceiveJob />} />
-            <Route path="/drivertobiding" element={<Drivertobiding />} />
-            <Route path="/biding-driver" element={<Bidding />} />
-            <Route path="/pricetable" element={<PriceTable />} />
-            <Route path="/waiting-driver" element={<WaitingDriver />} />
-            <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
-            <Route path="/home-driver" element={<HomeDriver />} />
-            <Route path="/jobdetail" element={<JobDetail />} />
-            <Route path="/checkdestination" element={<CheckDestination />} />
-            <Route path="/call-driver" element={<CallDriver />} />
-            <Route path="/chat-driver" element={<ChatDriver />} />
-            <Route path="/menu-driver" element={<MenuDriver />} />
+              {/* เส้นทางของคนขับ */}
+              <Route path="/driver" element={<SplashScreenDriver />} />
+              <Route path="/login-driver" element={<LoginDriver />} />
+              <Route path="/register-driver" element={<RegisterDriver />} />
+              
+              <Route path="/account-driver" element={<Driveraccount />} />
+              <Route path="/driving-license" element={<Drivinglicense />} />
+              <Route path="/otp-driver" element={<OTPDriver />} />
+              <Route path="/createpass-driver" element={<CreatepassDriver />} />
+              <Route path="/forgotpass-driver" element={<ForgotpassDriver />} />
+              <Route path="/notifications-driver" element={<NotificationsDriver />} />
+              <Route path="/receive-job" element={<ReceiveJob />} />
+              <Route path="/drivertobiding" element={<Drivertobiding />} />
+              <Route path="/biding-driver" element={<Bidding />} />
+              <Route path="/pricetable" element={<PriceTable />} />
+              <Route path="/waiting-driver" element={<WaitingDriver />} />
+              <Route path="/bidcom-driver" element={<BiddingcompletedDriver />} />
+              <Route path="/home-driver" element={<HomeDriver />} />
+              <Route path="/jobdetail" element={<JobDetail />} />
+              <Route path="/checkdestination" element={<CheckDestination />} />
+              <Route path="/call-driver" element={<CallDriver />} />
+              <Route path="/chat-driver" element={<ChatDriver />} />
+              <Route path="/menu-driver" element={<MenuDriver />} />
 
+              {/* Khing */}
+              <Route path="/detail-driverform" element={<DetailDriverForm />} /> 
+              <Route path="/report" element={<Report />} />
+              <Route path="/section" element={<SectionPage />} />
+              <Route path="/payment-details" element={<PaymentDetails />} />
+              <Route path="/FAQDetails" element={<FAQDetails />} />
+              <Route path="/Promacions" element={<Promacions />} />
+              <Route path="/Private" element={<Private />} />
+              <Route path="/Aboutus" element={<Aboutus />} />
+              <Route path="/Informationapp" element={<Informationapp />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/history" element={<HistoryPage />} />
+              <Route path="/driverhis" element={<Driverhistory />} />
+              <Route path="/prodriver" element={<Prodriver />} /> 
+              <Route path="/slideMeForm" element={<SlideMeForm />} /> 
 
-            {/* Khing */}
-            <Route path="/detail-driverform" element={<DetailDriverForm />} /> 
-            <Route path="/report" element={<Report />} />
-            <Route path="/section" element={<SectionPage />} />
-            <Route path="/payment-details" element={<PaymentDetails />} />
-            <Route path="/FAQDetails" element={<FAQDetails />} />
-            <Route path="/Promacions" element={<Promacions />} />
-            <Route path="/Private" element={<Private />} />
-            <Route path="/Aboutus" element={<Aboutus />} />
-            <Route path="/Informationapp" element={<Informationapp />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/history" element={<HistoryPage />} />
-            <Route path="/driverhis" element={<Driverhistory />} />
-            <Route path="/prodriver" element={<Prodriver />} /> 
-            <Route path="/slideMeForm" element={<SlideMeForm />} /> 
+              <Route path="/logicchat-driver" element={<LogicChatdriver />} />
+              <Route path="/logicchat-customer" element={<LogicChatcustomer />} />
 
-            <Route path="/logicchat-driver" element={<LogicChatdriver />} />
-            <Route path="/logicchat-customer" element={<LogicChatcustomer />} />
-
-
-            {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
-            {/* Home */}
-            <Route
-              path="/home"
-              element={
-                <>
-                  <Navbar />
-                  <div className="input-container">
-                    {/* Search input form */}
-                  </div>
-                  <MapView />
-                  <MapHome />
-                  <DriverBottomNavBar />
-                  <BottomNavBar />
-                </>
-              }
-            />
-          </Routes>
-        </div>
-      </Router>
-    </ChatProvider>
+              {/* About Developer */}
+              <Route path="/aboutdev" element={<AboutDeveloper />} />
+              {/* Home */}
+              <Route
+                path="/home"
+                element={
+                  <>
+                    <Navbar />
+                    <div className="input-container">
+                      {/* Search input form */}
+                    </div>
+                    <MapView />
+                    <MapHome />
+                    <DriverBottomNavBar />
+                    <BottomNavBar />
+                  </>
+                }
+              />
+            </Routes>
+          </div>
+        </Router>
+      </ChatProvider>
+    </PhoneProvider>
   );
 }
 

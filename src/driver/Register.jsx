@@ -1,17 +1,22 @@
 // src/components/Register.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { usePhone } from '../PhoneContext'; // นำเข้า usePhone จาก PhoneContext
 import './Register.css';
 
 function Register() {
   const [phone, setPhone] = useState('');
+  const { setPhoneNumber } = usePhone(); // ดึง setPhoneNumber จาก PhoneContext
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     console.log('Registering with phone:', phone);
 
-    // Navigate to /detailform after clicking the button
+    // เก็บเบอร์โทรใน PhoneContext
+    setPhoneNumber(phone);
+
+    // Navigate to /detail-driverform after clicking the button
     navigate('/detail-driverform');
   };
 

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { usePhone } from "../PhoneContext"; // ใช้ PhoneContext
 import "./Detaildriver.css";
 import humanImage from "./human.copy.jpg";
 
 const Profile = () => {
+  // เริ่มต้นข้อมูลผู้ใช้
   const initialUserInfo = {
     name: "",
     username: "",
@@ -14,10 +16,15 @@ const Profile = () => {
     image: humanImage,
   };
 
-  const [userInfo, setUserInfo] = useState(initialUserInfo);
+  // ดึงข้อมูลเบอร์โทรจาก PhoneContext
+  const { phoneNumber } = usePhone();
+
+  // ใช้เบอร์โทรที่ได้จาก Context เป็นค่าเริ่มต้น
+  const [userInfo, setUserInfo] = useState({ ...initialUserInfo, phone: phoneNumber });
 
   const navigate = useNavigate();
 
+  // ฟังก์ชันเปลี่ยนแปลงข้อมูลผู้ใช้
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({
@@ -26,13 +33,16 @@ const Profile = () => {
     });
   };
 
+  // ฟังก์ชันสำหรับการเปลี่ยนหน้าไปที่หน้า "account-driver"
   const handleSubmittonext = () => {
     navigate("/account-driver");
-  }
+  };
+
+  // ฟังก์ชันส่งข้อมูล (ยืนยันการบันทึก)
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("User Info:", userInfo);
-    setIsChanged(false);
+    // คุณสามารถเพิ่มการบันทึกข้อมูลที่นี่ เช่นส่งไปที่ API
   };
 
   return (

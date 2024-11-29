@@ -44,9 +44,9 @@ function Menu() {
             ศูนย์ความช่วยเหลือ<span className="menu-arrow">›</span>
           </div>
         </Link>
-        <Link to={"/aboutus"} style={{ textDecoration: "none" }}>
+        <Link to={"/aboutdev"} style={{ textDecoration: "none" }}>
           <div className="menu-item">
-            เกี่ยวกับ Slide Me<span className="menu-arrow">›</span>
+            รายชื่อผู้พัฒนาระบบ<span className="menu-arrow">›</span>
           </div>
         </Link>
       </div>
